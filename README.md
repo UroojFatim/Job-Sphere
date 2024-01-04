@@ -20,36 +20,12 @@ Jobline is a powerful and user-friendly job portal application that allows users
 1. **Simple Jobseeker Profile Setup:**
    Jobseekers can quickly create and personalize their profiles, highlighting their skills, experiences, and preferences.
 
-2. **Intuitive Job Search:**
-   Jobseekers can easily search for jobs based on various criteria such as location, industry, and job type. The platform provides a user-friendly interface for a smooth job search experience.
-
-3. **Application Tracking:**
+2. **Application Tracking:**
    Jobseekers can track the status of their applications, making it easy to follow up on job opportunities.
-
-### Shared Features
-
-1. **Comprehensive Company Directory:**
-   Jobline features a company directory that allows both recruiters and jobseekers to explore information about various companies.
-
-2. **Efficient Communication:**
-   The platform includes messaging functionality, facilitating communication between recruiters and jobseekers during the application process.
-
-3. **Notification System:**
-   Users receive timely notifications about application statuses, job updates, and new opportunities.
-
-## Getting Started
-
-To set up Jobline locally or deploy it to a server, follow the steps outlined in the [Installation Guide](./docs/INSTALLATION.md).
-
-For a detailed overview of the application's functionality, refer to the [User Guide](./docs/USER_GUIDE.md).
 
 ## Contributing
 
 We welcome contributions to improve Jobline! If you have suggestions, find bugs, or want to add new features, please check our [Contribution Guidelines](./CONTRIBUTING.md).
-
-## License
-
-Jobline is licensed under the [MIT License](./LICENSE). Feel free to use, modify, and distribute the software.
 
 ## Support
 
