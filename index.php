@@ -1,6 +1,6 @@
 <?php
 
-$pageTitle = 'Jobline - Your own jobs';
+$pageTitle = 'Workiee - Your Job Home';
 include './includes/header.php';
 
 ?>
