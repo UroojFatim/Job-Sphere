@@ -68,12 +68,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Get jobseeker ID from the session
     $user_id = $_SESSION['user_id'];
-    $sqlcheck = "SELECT * FROM jobseekers WHERE id = $user_id";
+    $sqlcheck = "SELECT * FROM jobseekers WHERE user_id = $user_id";
     $results = $conn->query($sqlcheck);
 
     if ($results->num_rows > 0) {
         $jobseekerData = $results->fetch_assoc();
-        $jobseekerId = $jobseekerData['id'];
+        
+        $jobseekerId = $jobseekerData['user_id'];
+        
         // Now $jobseekerId contains the jobseeker's ID
     } else {
         // Handle the case where no jobseeker data is found

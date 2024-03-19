@@ -80,7 +80,7 @@
                 </div>
                 <div class="card h-fit max-w-6xl p-5 md:p-12" id="form">
                     <h2 class="mb-4 text-2xl font-bold">Ready to Get Started?</h2>
-                    <form id="contactForm">
+                    <form id="contactForm" action="submit_contact.php" method="post">
                         <div class="mb-6">
                             <div class="mx-0 mb-1 sm:mb-4">
                                 <div class="mx-0 mb-1 sm:mb-4">

@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $insertSql = "INSERT INTO users (username, email, password, account_type) VALUES ('$username', '$email', '$password', '$accountType')";
 
         if ($conn->query($insertSql) === TRUE) {
-            $message = 'Registered Successfully! <a href="/jobline/account/login">Login Now</a>';
+            $message = 'Registered Successfully! <a href="/workiee_jobportal/account/login">Login Now</a>';
         } else {
             echo "Error: " . $insertSql . "<br>" . $conn->error;
         }
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="flex items-center justify-between">
                 <p class="text-sm text-gray-500">
                     Have Account?
-                    <a class="underline" href="/jobline/account/login">Login</a>
+                    <a class="underline" href="/workiee_jobportal/account/login">Login</a>
                 </p>
 
                 <button type="submit"

@@ -26,11 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Redirect the user to the dashboard or another page after successful login
             if($_SESSION['account_type'] === 'jobseeker'){
                 $message = 'Logged in Successfully! Redirecting...';
-                header("Refresh: $delay; URL=/jobline/dashboard/jobseeker");
+                header("Refresh: $delay; URL=/workiee_jobportal/dashboard/jobseeker");
             }
             else if($_SESSION['account_type'] === 'recruiter'){
                 $message = 'Logged in Successfully! Redirecting...';
-                header("Refresh: $delay; URL=/jobline/dashboard/recruiter");
+                header("Refresh: $delay; URL=/workiee_jobportal/dashboard/recruiter");
             }
             else{
                 header('Location: /');
@@ -96,7 +96,7 @@ include '../includes/header.php';
             <div class="flex items-center justify-between">
                 <p class="text-sm text-gray-500">
                     New Here? 
-                    <a class="underline" href="/jobline/account/register">Sign up</a>
+                    <a class="underline" href="/workiee_jobportal/account/register">Sign up</a>
                 </p>
 
                 <button type="submit"

@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database_name = "jobline";
+$database_name = "workiee";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database_name);
@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Create a new database named 'your_database_name'
-$database_name = "jobline";
+$database_name = "workiee";
 $sql_create_db = "CREATE DATABASE IF NOT EXISTS $database_name";
 
 if ($conn->query($sql_create_db) === FALSE) {

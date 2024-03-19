@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_id'])) {
   header("Location: /account/login.php");
   exit();
 } else if (($_SESSION['account_type'] !== 'jobseeker')) {
-  header('Location: /jobline');
+  header('Location: /workiee_jobportal');
   exit();
 }
 // Get the current user's ID from the session

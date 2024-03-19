@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
   exit();
 
 } else if (($_SESSION['account_type'] !== 'jobseeker')) {
-  header('Location: /jobline');
+  header('Location: /workiee_jobportal');
   exit();
 }
 // Get the current user's ID from the session
@@ -138,7 +138,7 @@ if (!isset($profile)) {
           </span>
         </li>
       </ul>
-      <a href="/jobline/account/logout"><button
+      <a href="/workiee_jobportal/account/logout"><button
                     class="px-3 text-xs py-2 bg-blue-700 border border-white text-white font-semibold hover:bg-blue-950 hover:text-white rounded-md transition-all duration-200">Logout</button></a>
     </div>
   </main>
@@ -162,7 +162,7 @@ JOIN
 JOIN 
     jobseekers ON job_applications.jobseeker_id = jobseekers.user_id
 JOIN 
-    companies ON jobs.userid = companies.user_id
+    companies ON jobs.id = companies.id
 WHERE 
     jobseekers.user_id = $user_id;
 

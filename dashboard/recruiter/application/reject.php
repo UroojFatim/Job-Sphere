@@ -7,6 +7,8 @@ $applicationId = $_GET['application_id'];
 
     if ($conn->query($updateSql)) {
         header('Location: ' . $_SERVER['HTTP_REFERER']);
+        header("Location: ../index");
+        exit(); 
     } else {
         die("Error updating status: " . $conn->error);
     }

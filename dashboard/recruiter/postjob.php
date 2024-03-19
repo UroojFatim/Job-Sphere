@@ -5,7 +5,7 @@ include '../../config.php';
 $message = '';
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['account_type'] !== 'recruiter') {
-  header('Location: /jobline/account/login.php');
+  header('Location: /workiee_jobportal/account/login.php');
   exit();
 }
 
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $company = $_SESSION['username'];
   $recruitorId = $_SESSION['user_id'];
 
-  $sql = "INSERT INTO jobs (userid, title, description, job_category, company,  location, jobType) VALUES ('$recruitorId','$jobTitle', '$jobDescription', '$jobCate',  '$company', '$jobLocation',  '$jobType')";
+  $sql = "INSERT INTO jobs (id, title, description, job_category, company,  location, jobType) VALUES ('$recruitorId','$jobTitle', '$jobDescription', '$jobCate',  '$company', '$jobLocation',  '$jobType')";
 
   if ($conn->query($sql) === TRUE) {
     // Job posted successfully

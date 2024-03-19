@@ -9,14 +9,14 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: /account/login.php");
     exit();
 } else if (($_SESSION['account_type'] !== 'recruiter')) {
-    header('Location: /jobline');
+    header('Location: /workiee_jobportal');
     exit();
 }
 // Get the current user's ID from the session
 $user_id = $_SESSION['user_id'];
 $message = '';
 // Check if the company profile exists for the current user
-$sql = "SELECT * FROM companies WHERE user_id = $user_id";
+$sql = "SELECT * FROM companies WHERE id = $user_id";
 $result = $conn->query($sql);
 
 if (!$result) {
@@ -34,7 +34,7 @@ if (!$result) {
         $description = $_POST['description'];
         $website = $_POST['website'];
 
-        $insertSql = "INSERT INTO companies (user_id, name, industry, description, website)
+        $insertSql = "INSERT INTO companies (id, name, industry, description, website)
                       VALUES ($user_id, '$name', '$industry', '$description', '$website')";
 
         if ($conn->query($insertSql) === TRUE) {
@@ -125,14 +125,14 @@ if (!isset($profile)) {
                     </span>
                 </li>
             </ul>
-            <a href="/jobline/account/logout"><button
+            <a href="/workiee_jobportal/account/logout"><button
                     class="px-3 text-xs py-2 bg-blue-700 border border-white text-white font-semibold hover:bg-blue-950 hover:text-white rounded-md transition-all duration-200">Logout</button></a>
         </div>
         <div class="w-1/2 bg-blue-950 rounded-md p-5 m-4">
             <h3 class="text-2xl font-semibold text-white">Jobs By You!</h3>
             <div class="flex my-3">
                 <?php
-                $sqlforjob = "SELECT * FROM jobs WHERE userid = $user_id ORDER BY created_at DESC";
+                $sqlforjob = "SELECT * FROM jobs WHERE id = $user_id ORDER BY created_at DESC";
 
                 $jobs = $conn->query($sqlforjob);
 
@@ -142,7 +142,7 @@ if (!isset($profile)) {
                         echo '<div class="bg-blue-800 p-2 rounded-md mx-2">
                                         <h3 class="text-white text-xl px-2 font-semibold">' . $row["title"] . '</h3>
                     <div class="flex py-3">
-                        <a href="/jobline/job-detail?job_id=' . $row['id'] . '"
+                        <a href="/workiee_jobportal/job-detail?job_id=' . $row['id'] . '"
                         <button
                             class="px-3 text-xs py-2 mx-2 bg-transparent border border-white text-white hover:bg-white hover:text-blue-950 rounded-md transition-all duration-200">View
                             Job Link</button></a>
@@ -181,7 +181,7 @@ JOIN
 JOIN 
     jobseekers ON job_applications.jobseeker_id = jobseekers.user_id
 WHERE 
-    jobs.userid = $user_id;
+    jobs.id = $user_id;
 
 ";
 

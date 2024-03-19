@@ -11,7 +11,6 @@ $sql = "
     SELECT 
         job_applications.id AS application_id,
         jobseekers.full_name AS job_seeker_name,
-        jobseekers.user_email AS job_seeker_email,
         jobseekers.resume_path AS job_seeker_resume,
         jobseekers.skills AS job_seeker_skills,
         jobseekers.education AS job_seeker_education,
@@ -54,14 +53,6 @@ if ($result->num_rows > 0) {
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 ' . $row['job_seeker_name'] . '
-                </dd>
-            </div>
-            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
-                    Email address
-                </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                ' . $row['job_seeker_email'] . '
                 </dd>
             </div>
             <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -123,8 +114,8 @@ if ($result->num_rows > 0) {
         </dl>
     </div>
     <div class="flex">
-        <a href="/jobline/dashboard/recruiter/application/approve?application_id=' . $row['application_id'] . '" class="bg-green-700 text-center py-1 w-20 px-3 rounded-md text-white m-2 hover:bg-green-900">Approve</a>
-        <a href="/jobline/dashboard/recruiter/application/reject?application_id=' . $row['application_id'] . '" class="bg-red-700 text-center py-1 w-20 px-3 rounded-md text-white m-2 hover:bg-red-900">Reject</a>
+        <a href="/workiee_jobportal/dashboard/recruiter/application/approve?application_id=' . $row['application_id'] . '" class="bg-green-700 text-center py-1 w-20 px-3 rounded-md text-white m-2 hover:bg-green-900">Approve</a>
+        <a href="/workiee_jobportal/dashboard/recruiter/application/reject?application_id=' . $row['application_id'] . '" class="bg-red-700 text-center py-1 w-20 px-3 rounded-md text-white m-2 hover:bg-red-900">Reject</a>
     </div>
 </div>';
 } else {
