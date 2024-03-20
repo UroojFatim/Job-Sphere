@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include('includes/header.php');
 ?>
 <section class="bg-blue-50" id="contact">

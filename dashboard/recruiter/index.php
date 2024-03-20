@@ -125,8 +125,6 @@ if (!isset($profile)) {
                     </span>
                 </li>
             </ul>
-            <a href="/workiee_jobportal/account/logout"><button
-                    class="px-3 text-xs py-2 bg-blue-700 border border-white text-white font-semibold hover:bg-blue-950 hover:text-white rounded-md transition-all duration-200">Logout</button></a>
         </div>
         <div class="w-1/2 bg-blue-950 rounded-md p-5 m-4">
             <h3 class="text-2xl font-semibold text-white">Jobs By You!</h3>

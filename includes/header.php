@@ -1,4 +1,5 @@
 <?php
+
 $current_page = basename($_SERVER['PHP_SELF']);
 
 ?>
@@ -23,8 +24,26 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <span></span>
             </div>
 
-            <a href="/workiee_jobportal/account/login"
+            <!-- <a href="/workiee_jobportal/account/login"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-4 lg:px-8 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Login</a>
+            <a href="/workiee_jobportal/account/logout"><button
+                class="px-3 text-xs py  -2 bg-blue-700 border border-white text-white font-semibold hover:bg-blue-950 hover:text-white rounded-md transition-all duration-200">Logout</button></a> -->
+
+
+                <?php
+
+// Check if the user is logged in by checking if the session variable for user ID exists
+
+if (isset($_SESSION['user_id'])) {
+    // User is logged in, show the logout button
+    echo '<a href="/workiee_jobportal/account/logout.php" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-4 lg:px-8 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Logout</a>';
+    
+} else {
+    // User is not logged in, show the login button
+    echo '<a href="/workiee_jobportal/account/login" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-4 lg:px-8 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Login</a>';
+}
+?>
+
             <a href="/workiee_jobportal/dashboard"
                 class="text-white bg-blue-700 hover:bg-blue-800 mx-2 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-4 lg:px-6 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Account</a>
             <button data-collapse-toggle="mobile-menu-2" type="button"

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $pageTitle = 'Workiee - Your Job Home';
 include './includes/header.php';
 

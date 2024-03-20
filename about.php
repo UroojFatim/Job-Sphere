@@ -1,4 +1,5 @@
 <?php
+session_start();
 $pageTitle = 'About us - Jobline';
 include('includes/header.php')
     ?>

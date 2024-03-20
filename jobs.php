@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Include the configuration file and any necessary functions
 include 'config.php';
 $pageTitle = 'Jobs - Jobline';
