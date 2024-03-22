@@ -1,6 +1,6 @@
-# Jobline - Job Portal
+# Workiee - Job Portal
 
-Jobline is a powerful and user-friendly job portal application that allows users to seamlessly create and manage both recruiter and jobseeker profiles. The platform simplifies the job application process, providing an efficient way for recruiters to manage applications and for jobseekers to explore job opportunities.
+Workiee is a powerful and user-friendly job portal application that allows users to seamlessly create and manage both recruiter and jobseeker profiles. The platform simplifies the job application process, providing an efficient way for recruiters to manage applications and for jobseekers to explore job opportunities.
 
 ## Features
 
@@ -25,10 +25,10 @@ Jobline is a powerful and user-friendly job portal application that allows users
 
 ## Contributing
 
-We welcome contributions to improve Jobline! If you have suggestions, find bugs, or want to add new features, please check our [Contribution Guidelines](./CONTRIBUTING.md).
+We welcome contributions to improve Workiee! If you have suggestions, find bugs, or want to add new features, please check our [Contribution Guidelines](./CONTRIBUTING.md).
 
 ## Support
 
-If you encounter any issues or have questions, please create an [issue](https://github.com/yourusername/jobline/issues) on the GitHub repository.
+If you encounter any issues or have questions, please create an [issue](https://github.com/yourusername/Workiee/issues) on the GitHub repository.
 
-Happy recruiting and job hunting with Jobline!
+Happy recruiting and job hunting with Workiee!

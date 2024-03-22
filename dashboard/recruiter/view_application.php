@@ -1,7 +1,7 @@
 <?php
 // Assuming you have established a database connection
 include('../../config.php');
-$pageTitle = 'View Application - Jobline';
+$pageTitle = 'View Application - Workiee';
 include('../../includes/header.php');
 // Get the job application ID from the URL
 $job_application_id = $_GET['application_id'];
@@ -37,8 +37,8 @@ if ($result->num_rows > 0) {
 
     // Display the job application details
     echo '<div class="bg-white w-2/5 mx-auto my-10 overflow-hidden shadow rounded-lg border">
-    <div class="px-4 py-5 sm:px-6">
-        <h3 class="text-lg leading-6 font-medium text-gray-900">
+    <div class="px-4 py-6 sm:px-6">
+        <h3 class="text-xl leading-6 font-medium text-gray-900">
             Job Application Details
         </h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500">
@@ -113,9 +113,9 @@ if ($result->num_rows > 0) {
             </div>
         </dl>
     </div>
-    <div class="flex">
-        <a href="/workiee_jobportal/dashboard/recruiter/application/approve?application_id=' . $row['application_id'] . '" class="bg-green-700 text-center py-1 w-20 px-3 rounded-md text-white m-2 hover:bg-green-900">Approve</a>
-        <a href="/workiee_jobportal/dashboard/recruiter/application/reject?application_id=' . $row['application_id'] . '" class="bg-red-700 text-center py-1 w-20 px-3 rounded-md text-white m-2 hover:bg-red-900">Reject</a>
+    <div class="flex justify-center items-center">
+        <a href="/workiee_jobportal/dashboard/recruiter/application/approve?application_id=' . $row['application_id'] . '" class="bg-green-700 text-center py-2 px-5 rounded-md text-white m-2 hover:bg-green-800">Approve</a>
+        <a href="/workiee_jobportal/dashboard/recruiter/application/reject?application_id=' . $row['application_id'] . '" class="bg-red-700 text-center py-2 px-5 rounded-md text-white m-2 hover:bg-red-800">Reject</a>
     </div>
 </div>';
 } else {

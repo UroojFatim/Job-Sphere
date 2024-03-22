@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$pageTitle = 'Login - Jobline';
+$pageTitle = 'Login - Workiee';
 include '../includes/header.php';
 
 ?>
@@ -100,7 +100,7 @@ include '../includes/header.php';
                 </p>
 
                 <button type="submit"
-                    class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white">
+                    class="inline-block rounded-lg bg-orange-500 px-8 py-3 text-sm font-medium text-white">
                     Login
                 </button>
             </div>
@@ -109,7 +109,7 @@ include '../includes/header.php';
 
     <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
         <img alt="Welcome"
-            src="https://images.unsplash.com/photo-1621106036911-964146b9f97c?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1630450202872-e0829c9d6172?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="absolute inset-0 h-full w-full object-cover" />
     </div>
 </section>

@@ -4,7 +4,7 @@ include '../../config.php';
 
 // Start or resume the session
 session_start();
-$pageTitle = 'Update Profile - Jobline';
+$pageTitle = 'Update Profile - Workiee';
 include('../../includes/header.php');
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
@@ -93,7 +93,7 @@ if ($result->num_rows > 0) {
             cols="" rows="10"><?php echo $profile['experience'] ?></textarea>
         </div>
         <div>
-          <button name="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-3 rounded" type="submit">Update Profile</button>
+          <button name="submit" class="bg-orange-500 hover:bg-orange-600 text-black py-2 px-3 rounded" type="submit">Update Profile</button>
         </div>
     </form>
   </div>

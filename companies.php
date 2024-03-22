@@ -2,32 +2,33 @@
 session_start();
 // Include the configuration file and any necessary functions
 include 'config.php';
-$pageTitle = 'Companies - Jobline';
+$pageTitle = 'Companies - Workiee';
 include 'includes/header.php';
 // Retrieve all companies from the 'companies' table
 $sql = "SELECT * FROM companies";
 $result = $conn->query($sql);
 ?>
-<section class="bg-gray-900 text-white">
-    <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-1/2 lg:items-center">
+<section class="bg-orange-100 text-black">
+    <div class="mx-auto max-w-screen-xl px-4 py-28 lg:flex lg:h-1/2 lg:items-center">
         <div class="mx-auto max-w-3xl text-center">
             <h1
-                class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
+                class="bg-gradient-to-r from-blue-800 to-orange-500 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
                 Find Best Company <span class="sm:block"> For Your Career! </span>
             </h1>
         </div>
     </div>
 </section>
-<div class="w-[80%] mx-auto p-10 flex">
+<div class="w-[90%] mx-auto gap-4 w-full py-10 px-12 flex grid-col-3">
     <?php
     // Check if there are companies to display
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             // Output each company's details
             echo '<article
-            class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6"
+            class="rounded-lg border border-gray-300 bg-white p-4 w-1/3 shadow-sm transition hover:shadow-lg sm:p-6"
           >
-            <span class="inline-block rounded bg-blue-600 p-2 text-white">
+          <div class="flex gap-x-3">
+            <span class="inline-block rounded bg-orange-500 p-2 text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6"
@@ -49,16 +50,16 @@ $result = $conn->query($sql);
             </span>
           
             <a href="#">
-              <h3 class="mt-0.5 text-lg font-medium text-gray-900">
+              <h3 class="mt-1 text-lg font-medium text-gray-900">
                 ' . $row['name'] . '
               </h3>
             </a>
-          
+            </div>
             <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
             ' . $row['description'] . '
             </p>
           
-            <a href="#" class="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600">
+            <a href="#" class="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-orange-800">
             ' . $row['industry'] . '
           
               <span aria-hidden="true" class="block transition-all group-hover:ms-0.5 rtl:rotate-180">

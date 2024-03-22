@@ -2,17 +2,17 @@
 session_start();
 // Include the configuration file and any necessary functions
 include 'config.php';
-$pageTitle = 'Jobs - Jobline';
+$pageTitle = 'Jobs - Workiee';
 include 'includes/header.php';
 
 // Retrieve all jobs from the 'jobs' table, ordered by the most recent first
 $sql = "SELECT * FROM jobs ORDER BY created_at DESC";
 $result = $conn->query($sql); ?>
-<section class="bg-gray-900 text-white">
-  <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-1/2 lg:items-center">
+<section class="bg-orange-100 text-black">
+  <div class="mx-auto max-w-screen-xl px-4 py-28 lg:flex lg:h-1/2 lg:items-center">
     <div class="mx-auto max-w-3xl text-center">
       <h1
-        class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
+        class="bg-gradient-to-r from-blue-800 to-orange-500 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
         Explore all jobs
 
         <span class="sm:block"> posted by companies </span>
@@ -20,30 +20,30 @@ $result = $conn->query($sql); ?>
     </div>
   </div>
 </section>
-<div class="w-[90%] mx-auto p-10 flex">
+<div class="w-[90%] mx-auto gap-4 w-full py-10 px-12 flex grid-col-3">
   <?php
   // Check if there are jobs to display
   if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
 
-      echo '<article class="rounded-xl bg-white w-1/2 p-4 ring ring-indigo-50 sm:p-6 lg:p-8">
+      echo '<article class="rounded-xl bg-white w-1/2 p-4 border border-gray-300 sm:p-6 lg:p-8">
         <div class="flex items-start sm:gap-8">
           <div
-            class="hidden sm:grid sm:h-20 sm:w-20 sm:shrink-0 sm:place-content-center sm:rounded-full sm:border-2 sm:border-indigo-500"
+            class="hidden sm:grid sm:h-20 sm:w-20 sm:shrink-0 sm:place-content-center sm:rounded-full sm:border-2 sm:border-orange-500"
             aria-hidden="true"
           >
             <div class="flex items-center gap-1">
-              <span class="h-8 w-0.5 rounded-full bg-indigo-500"></span>
-              <span class="h-6 w-0.5 rounded-full bg-indigo-500"></span>
-              <span class="h-4 w-0.5 rounded-full bg-indigo-500"></span>
-              <span class="h-6 w-0.5 rounded-full bg-indigo-500"></span>
-              <span class="h-8 w-0.5 rounded-full bg-indigo-500"></span>
+              <span class="h-8 w-0.5 rounded-full bg-orange-500"></span>
+              <span class="h-6 w-0.5 rounded-full bg-orange-500"></span>
+              <span class="h-4 w-0.5 rounded-full bg-orange-500"></span>
+              <span class="h-6 w-0.5 rounded-full bg-orange-500"></span>
+              <span class="h-8 w-0.5 rounded-full bg-orange-500"></span>
             </div>
           </div>
       
           <div>
             <strong
-              class="rounded border border-indigo-500 bg-indigo-500 px-3 py-1.5 text-[10px] font-medium text-white"
+              class="rounded border border-orange-500 bg-orange-500 px-3 py-1.5 text-[12px] capitalize font-medium text-white"
             >
            ' . $row['job_category'] . '
             </strong>

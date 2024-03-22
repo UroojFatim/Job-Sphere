@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 ?>
-<?php $pageTitle = 'Post Job - Jobline'; include('../../includes/header.php') ?>
+<?php $pageTitle = 'Post Job - Workiee'; include('../../includes/header.php') ?>
 
 <main class="main bg-white px-6 md:px-16 py-6">
   <div class="w-full max-w-xl mx-auto">
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </div>
         </div>
         <div class="md:flex md:justify-between">
-          <div class="w-full mb-4 md:mb-0">
+          <div class="w-full mb-4">
             <label class="block text-gray-700 text-sm mb-2" for="job-type">
               Job Category
             </label>
@@ -126,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             cols="" rows="10"></textarea>
         </div>
         <div>
-          <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-3 rounded" type="submit">Create job</button>
+          <button class="border border-orange-500 hover:border-orange-500 bg-orange-500 hover:bg-transparent hover:text-black text-white py-3 px-5 rounded" type="submit">Create job</button>
         </div>
     </form>
   </div>

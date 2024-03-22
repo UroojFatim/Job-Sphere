@@ -4,9 +4,9 @@ include '../../config.php';
 
 session_start();
 // Check if the user is logged in
-if (!isset($_SESSION['user_id'])) {
+if (!isset ($_SESSION['user_id'])) {
     // Redirect to the login page if the user is not logged in
-    header("Location: /account/login.php");
+    header("Location: /workiee_jobportal/account/login.php");
     exit();
 } else if (($_SESSION['account_type'] !== 'recruiter')) {
     header('Location: /workiee_jobportal');
@@ -47,10 +47,10 @@ if (!$result) {
     }
 }
 $pageTitle = 'Recruiter Dashboard';
-include('../../includes/header.php')
+include ('../../includes/header.php')
     ?>
 <?php
-if (!isset($profile)) {
+if (!isset ($profile)) {
     // Display the company profile form
     ?>
     <main class="main bg-white px-6 md:px-16 py-6">
@@ -89,7 +89,7 @@ if (!isset($profile)) {
                     </div>
 
                     <div>
-                        <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-3 rounded" type="submit">Create
+                        <button class="bg-orange-500 hover:bg-orange-600 text-black py-2 px-3 rounded" type="submit">Create
                             Profile</button>
                     </div>
             </form>
@@ -97,38 +97,56 @@ if (!isset($profile)) {
     </main>
     <?php
 } else { ?>
-    <h1 class="text-4xl text-center py-5 text-gray-800 font-semibold">Hi
+    <h1 class="text-4xl text-center mt-4 py-5 text-gray-800 font-semibold">Hi
         <?php echo $profile['name'] ?>, Welcome Back!
     </h1>
-    <main class="flex mx-10 p-10 rounded-md">
-        <div class="w-1/2">
-            <h3 class="text-2xl font-semibold py-5 text-blue-950">Profile Details</h3>
-            <ul>
-                <li>Company:
-                    <span class="font-semibold text-black">
+    <main class="flex mx-10 py-6 rounded-md ">
+        <div class="flex-1 px-6">
+            <h3 class="text-3xl font-semibold py-6 text-black">Profile Details</h3>
+            <ul class="text-lg text-black">
+                <li class="font-medium ">Company:
+                    <span class="font-normal">
                         <?php echo $profile['name'] ?>
                     </span>
                 </li>
-                <li>Industry:
-                    <span class="font-semibold text-black">
+                <li class="font-medium mt-2">Industry:
+                    <span class="font-normal">
                         <?php echo $profile['industry'] ?>
                     </span>
                 </li>
-                <li>Description
-                    <span class="font-semibold text-black">
-                        <?php echo $profile['description'] ?>
-                    </span>
-                </li>
-                <li>Website:
-                    <span class="font-semibold text-black">
+                <li class="font-medium mt-2">Website:
+                    <span class="font-normal">
                         <?php echo $profile['website'] ?>
                     </span>
                 </li>
+                <li class="font-medium mt-2">Description:
+                    <span class="font-normal ">
+                        <?php echo $profile['description'] ?>
+                    </span>
+                </li>
+
             </ul>
         </div>
-        <div class="w-1/2 bg-blue-950 rounded-md p-5 m-4">
-            <h3 class="text-2xl font-semibold text-white">Jobs By You!</h3>
-            <div class="flex my-3">
+
+        <div class="flex-1">
+            <img alt="Party"
+                src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="" />
+        </div>
+    </main>
+    <section class="flex mx-10 py-20 gap-4 ">
+        <div class="flex-1 bg-orange-100 rounded-md p-8">
+            <h3 class="text-3xl mb-4 font-semibold text-black">Jobs By You!</h3>
+            <p class="mb-6 text-lg">
+                To maintain high-quality job listings and ensure each position gets the attention it deserves, our platform
+                allows recruiters to post only one job at a time. This policy helps streamline the recruitment process,
+                encouraging a focus on detail and clarity in each job advertisement.</p>
+            <a href="postjob"><button
+                    class="px-5 text-sm py-3 bg-white border border-white hover:border-orange-500 text-orange-500  hover:bg-transparent hover:text-black rounded-md transition-all duration-200">Post
+                    a Job</button></a>
+        </div>
+        <div class='flex-1'>
+            <div class="flex">
                 <?php
                 $sqlforjob = "SELECT * FROM jobs WHERE id = $user_id ORDER BY created_at DESC";
 
@@ -137,29 +155,28 @@ if (!isset($profile)) {
                 // Check if there are rows in the result set
                 if ($jobs->num_rows > 0) {
                     while ($row = $jobs->fetch_assoc()) {
-                        echo '<div class="bg-blue-800 p-2 rounded-md mx-2">
-                                        <h3 class="text-white text-xl px-2 font-semibold">' . $row["title"] . '</h3>
+                        echo '<div class=" p-6 rounded-md mx-2">
+                                        <h3 class="text-black text-2xl px-2 mb-2 font-semibold">' . $row["title"] . '</h3>
+                                        <p class="text-black text-lg px-2 mb-2">Description: ' . $row["description"] . '</p>
+                                        <p class="text-black text-lg px-2 mb-2">Date: ' . $row["created_at"] . '</p>
                     <div class="flex py-3">
                         <a href="/workiee_jobportal/job-detail?job_id=' . $row['id'] . '"
                         <button
-                            class="px-3 text-xs py-2 mx-2 bg-transparent border border-white text-white hover:bg-white hover:text-blue-950 rounded-md transition-all duration-200">View
+                            class="px-5 text-sm py-3 mx-2 bg-orange-500 text-white hover:bg-transparent border border-white hover:border-orange-500 hover:text-black hover:bg-white hover:text-orange-950 rounded-md transition-all duration-200">View
                             Job Link</button></a>
                     </div>
                 </div>';
                     }
                 } else {
-                    echo '<p class="text-center text-white">No jobs found.</p>';
+                    echo '<p class="text-center text-black">No jobs found.</p>';
                 }
                 ; ?>
             </div>
-            <a href="postjob"><button
-                    class="px-3 text-xs py-2 bg-white border border-white text-blue-750 font-semibold hover:bg-transparent hover:text-white rounded-md transition-all duration-200">Post
-                    a Job</button></a>
         </div>
-    </main>
+    </section>
 
 
-    <h2 class="text-2xl text-center py-5 text-gray-800 font-semibold uppercase">Job Applications
+    <h2 class="text-2xl text-center py-6 text-gray-800 font-semibold uppercase">Job Applications
     </h2>
 
     <?php
@@ -185,29 +202,29 @@ WHERE
 
     $result = $conn->query($sql_applications);
     if (!$result) {
-        die("Error: " . $conn->error);
+        die ("Error: " . $conn->error);
     }
     if ($result->num_rows > 0) {
         echo '<div class="relative mx-16 mb-16 overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500">
-        <thead class="text-xs text-white uppercase bg-blue-800">
+        <thead class="text-xs text-white uppercase bg-orange-500">
             <tr>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 py-4">
                     Job Title
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 py-4">
                    Applicant Name
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 py-4">
                     Cover Letter
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 py-4">
                     Apply Date
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 py-4">
                     Status
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 py-4">
                     <span class="sr-only">View</span>
                 </th>
             </tr>
@@ -232,7 +249,7 @@ WHERE
         ' . $row["status"] . '
         </td>
         <td class="px-6 py-4 text-right">
-            <a href="view_application.php?application_id=' . $row["id"] . '" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+            <a href="view_application.php?application_id=' . $row["id"] . '" class="font-medium text-orange-500 dark:text-orange-500 hover:underline">View</a>
         </td>
     </tr>';
         }

@@ -5,7 +5,7 @@ include '../../config.php';
 session_start();
 $message = '';
 
-if (!isset($_SESSION['user_id'])) {
+if (!isset ($_SESSION['user_id'])) {
   header("Location: /account/login.php");
   exit();
 
@@ -46,12 +46,12 @@ if ($result->num_rows > 0) {
   }
 }
 $pageTitle = 'Jobseeker - Dashboard';
-include('../../includes/header.php')
+include ('../../includes/header.php')
   ?>
 
 
 <?php
-if (!isset($profile)) {
+if (!isset ($profile)) {
   ?>
 
   <main class="main bg-white px-6 md:px-16 py-6">
@@ -95,7 +95,7 @@ if (!isset($profile)) {
               cols="" rows="10"></textarea>
           </div>
           <div>
-            <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-3 rounded" type="submit">Create
+            <button class="bg-orange-500 hover:bg-orange-600 text-black py-2 px-3 rounded" type="submit">Create
               Profile</button>
           </div>
       </form>
@@ -105,42 +105,49 @@ if (!isset($profile)) {
   <?php
 } else {
   ?>
-  <h1 class="text-4xl text-center py-5 text-gray-800 font-semibold">Hi
+  <h1 class="text-4xl text-center mt-6 py-4 text-gray-800 font-semibold">Hi
     <?php echo $profile['full_name'] ?>, Welcome Back!
   </h1>
+
   <main class="flex mx-10 p-10 rounded-md">
-    <div class="w-1/2">
-      <h3 class="text-2xl font-semibold py-5 text-blue-950">Profile Details</h3>
-      <ul>
-        <li>Full Name:
-          <span class="font-semibold text-black">
+    <div class="flex-1 px-6">
+      <h3 class="text-3xl font-semibold py-6 text-black">Profile Details</h3>
+      <ul class="text-lg text-black">
+        <li class="font-medium">Full Name:
+          <span class="font-normal">
             <?php echo $profile['full_name'] ?>
           </span>
         </li>
-        <li>Resume Link:
-          <span class="font-semibold text-black">
+        <li class="font-medium mt-2">Resume Link:
+          <span class="font-normal">
             <?php echo $profile['resume_path'] ?>
           </span>
         </li>
-        <li>Skills:
-          <span class="font-semibold text-black">
+        <li class="font-medium mt-2">Skills:
+          <span class="font-normal">
             <?php echo $profile['skills'] ?>
           </span>
         </li>
-        <li>Education:
-          <span class="font-semibold text-black">
+        <li class="font-medium mt-2">Education:
+          <span class="font-normal">
             <?php echo $profile['education'] ?>
           </span>
         </li>
-        <li>Experience:
-          <span class="font-semibold text-black">
+        <li class="font-medium mt-2">Experience:
+          <span class="font-normal">
             <?php echo $profile['experience'] ?>
           </span>
         </li>
       </ul>
     </div>
+    <div class="flex-1">
+      <img alt="Party"
+        src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        class="" />
+    </div>
   </main>
-  <h2 class="text-2xl text-center py-5 text-gray-800 font-semibold uppercase">Job Applications
+
+  <h2 class="text-2xl text-center py-5 mt-6 text-gray-800 font-semibold uppercase">Job Applications
   </h2>
 
   <?php
@@ -169,12 +176,12 @@ WHERE
 
   $result = $conn->query($sql_applications);
   if (!$result) {
-    die("Error: " . $conn->error);
+    die ("Error: " . $conn->error);
   }
   if ($result->num_rows > 0) {
     echo '<div class="relative mx-16 mb-16 overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500">
-        <thead class="text-xs text-white uppercase bg-blue-800">
+        <thead class="text-xs text-white uppercase bg-orange-500">
             <tr>
                 <th scope="col" class="px-6 py-3">
                     Job Title
@@ -190,9 +197,6 @@ WHERE
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Status
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    <span class="sr-only">View</span>
                 </th>
             </tr>
         </thead>
@@ -214,9 +218,6 @@ WHERE
         </td>
         <td class="px-6 py-4">
         ' . $row["status"] . '
-        </td>
-        <td class="px-6 py-4 text-right">
-            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
         </td>
     </tr>';
     }

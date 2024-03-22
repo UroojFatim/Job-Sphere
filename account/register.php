@@ -1,7 +1,7 @@
 <?php
 
 include '../config.php';
-$pageTitle = 'Register - Jobline';
+$pageTitle = 'Register - Workiee';
 include '../includes/header.php';
 $message = false;
 
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </p>
 
                 <button type="submit"
-                    class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white">
+                    class="inline-block rounded-lg bg-orange-500 px-7 py-3 text-sm font-medium text-white">
                     Register
                 </button>
             </div>
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
         <img alt="Welcome"
-            src="https://images.unsplash.com/photo-1563095292-cb37b7062b34?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1583674767461-99d1a9850069?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="absolute inset-0 h-full w-full object-cover" />
     </div>
 </section>

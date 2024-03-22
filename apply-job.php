@@ -19,7 +19,7 @@ include('includes/header.php');
 if ($userType === 'recruiter') {
     ?>
     <div class="relative ml-96 my-20 -mr-5 p-4 w-full max-w-md max-h-full">
-        <div class="relative rounded-lg shadow bg-blue-950">
+        <div class="relative rounded-lg shadow bg-orange-950">
 
             <div class="p-4 md:p-5 text-center">
                 <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true"
@@ -27,11 +27,11 @@ if ($userType === 'recruiter') {
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
-                <h3 href="/" class="mb-5 text-lg font-normal text-white">Recruiters Can't Apply
+                <h3 href="/" class="mb-5 text-lg font-normal text-black">Recruiters Can't Apply
                     For Job!</h3>
                 <a href="">
                     <button data-modal-hide="popup-modal" type="button"
-                        class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center me-2">
+                        class="text-black bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center me-2">
                         Go Back
                     </button></a>
             </div>
@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     cols="" rows="10"></textarea>
             </div>
             <div>
-                <button class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-3 rounded" type="submit">Apply
+                <button class="bg-orange-500 hover:bg-orange-600 text-black py-2 px-3 rounded" type="submit">Apply
                     Now</button>
             </div>
         </form>
