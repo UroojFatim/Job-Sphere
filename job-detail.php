@@ -30,7 +30,7 @@ echo '
     <section class="relative bg-[url(https://source.unsplash.com/700x300/?' . $job['job_category'] . ')] bg-cover bg-center bg-no-repeat">
     <div class="absolute inset-0 bg-white/75 bg-transparent from-white/95 to-white/25"></div>
   
-    <div class="relative mx-auto max-w-screen-xl px-4 py-48 sm:px-6 lg:flex lg:items-center lg:px-8">
+    <div class="relative mx-auto max-w-screen-xl px-6 py-48 md:px-10 lg:flex lg:items-center lg:px-8">
       <div class="max-w-xl text-left rtl:sm:text-right">
         <h1 class="text-3xl font-extrabold sm:text-5xl">
           Apply Now For
@@ -44,7 +44,7 @@ echo '
         <div class="mt-8 flex flex-wrap gap-4 text-center">
           <a
             href="apply-job?job_id=' . $job['id'] . '"
-            class="block w-full rounded bg-orange-600 px-12 py-3 text-sm font-medium text-white hover:text-black shadow hover:bg-transparent hover:border-orange-500 border border-orange-500 focus:outline-none focus:ring active:bg-orange-500 sm:w-auto"
+            class="block w-full rounded bg-orange-500 px-12 py-3 text-sm font-medium text-white hover:text-black shadow hover:bg-transparent hover:border-orange-500 border border-orange-500 focus:outline-none focus:ring active:bg-orange-500 sm:w-auto"
           >
             Apply Now
           </a>
@@ -53,10 +53,10 @@ echo '
     </div>
   </section>
   
-  <div class="flex flex-col bg-orange-50 w-full mx-auto mt-12 px-16 py-12">
-    <h5 class="text-2xl text-black font-semibold mb-4">Job Description</h5>
+  <div class="flex flex-col bg-orange-50 w-full mx-auto p-8 md:p-12 max-w-screen-2xl">
+    <h5 class="text-2xl text-black font-semibold mb-4 italic">Job Description</h5>
     <div class="text-lg mb-4">' . $job['description'] . ' </div>
-    <h5 class="block mb-4 mt-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-orange-gray-900">
+    <h5 class="italic block mb-4 mt-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-orange-gray-900">
       Job Details
     </h5>
     <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">

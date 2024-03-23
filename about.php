@@ -4,8 +4,8 @@ $pageTitle = 'About us - Workiee';
 include('includes/header.php')
     ?>
 <section>
-    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+    <div class="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 sm:py-12 lg:px-12 lg:py-16">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
             <div class="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
                 <img alt="Party"
                     src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

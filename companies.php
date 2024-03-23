@@ -9,23 +9,23 @@ $sql = "SELECT * FROM companies";
 $result = $conn->query($sql);
 ?>
 <section class="bg-orange-100 text-black">
-    <div class="mx-auto max-w-screen-xl px-4 py-28 lg:flex lg:h-1/2 lg:items-center">
-        <div class="mx-auto max-w-3xl text-center">
-            <h1
-                class="bg-gradient-to-r from-blue-800 to-orange-500 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
-                Find Best Company <span class="sm:block"> For Your Career! </span>
-            </h1>
-        </div>
+  <div class="mx-auto max-w-screen-xl px-4 py-28 lg:flex lg:h-1/2 lg:items-center">
+    <div class="mx-auto max-w-3xl text-center">
+      <h1
+        class="bg-gradient-to-r from-blue-800 to-orange-500 bg-clip-text px-4 md:px-0 text-3xl font-extrabold text-transparent sm:text-5xl">
+        Find Best Company <span class="sm:block"> For Your Career! </span>
+      </h1>
     </div>
+  </div>
 </section>
-<div class="w-[90%] mx-auto gap-4 w-full py-10 px-12 flex grid-col-3">
-    <?php
-    // Check if there are companies to display
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            // Output each company's details
-            echo '<article
-            class="rounded-lg border border-gray-300 bg-white p-4 w-1/3 shadow-sm transition hover:shadow-lg sm:p-6"
+<div class="mx-auto gap-4 w-full p-8 md:p-10 lg:py-10 lg:px-12 max-w-screen-2xl flex flex-col md:flex-row md:grid md:grid-cols-2 lg:grid-cols-3">
+  <?php
+  // Check if there are companies to display
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      // Output each company's details
+      echo '<article
+            class="rounded-lg border border-gray-300 bg-white p-4 w-full shadow-sm transition hover:shadow-lg sm:p-6"
           >
           <div class="flex gap-x-3">
             <span class="inline-block rounded bg-orange-500 p-2 text-white">
@@ -68,10 +68,11 @@ $result = $conn->query($sql);
             </a>
           </article>
           ';
-        }
-    } else {
-        echo "<p class='w-full text-center py-10 text-2xl text-gray-600'>No companies found.</p>";
     }
-    ?>
-</body>
-</html>
+  } else {
+    echo "<p class='w-full text-center py-10 text-2xl text-gray-600'>No companies found.</p>";
+  }
+  ?>
+  </body>
+
+  </html>

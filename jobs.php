@@ -20,13 +20,13 @@ $result = $conn->query($sql); ?>
     </div>
   </div>
 </section>
-<div class="w-[90%] mx-auto gap-4 w-full py-10 px-12 flex grid-col-3">
+<div class="mx-auto gap-4 w-full p-8 md:p-10 lg:py-10 lg:px-12 max-w-screen-2xl flex flex-col md:flex-row md:grid md:grid-cols-2 xl:grid-cols-3">
   <?php
   // Check if there are jobs to display
   if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
 
-      echo '<article class="rounded-xl bg-white w-1/2 p-4 border border-gray-300 sm:p-6 lg:p-8">
+      echo '<article class="rounded-xl bg-white p-4 border border-gray-300 sm:p-6 lg:p-8">
         <div class="flex items-start sm:gap-8">
           <div
             class="hidden sm:grid sm:h-20 sm:w-20 sm:shrink-0 sm:place-content-center sm:rounded-full sm:border-2 sm:border-orange-500"

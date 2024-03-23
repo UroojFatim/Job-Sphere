@@ -12,21 +12,21 @@ include ('includes/header.php');
 
 <body>
     <section class="bg-orange-50" id="contact">
-        <div class="mx-auto max-w-8xl px-4 py-16 sm:px-6 lg:px-16 lg:py-12">
-            <div class="mb-4">
-                <div class="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-14">
-                    <h6 class="text-orange-500 font-bold mb-1">CONTACT</h6>
-                    <h2 class="font-heading mb-4 font-bold tracking-tight text-gray-900 text-3xl sm:text-5xl">
+        <div class="mx-auto max-w-8xl px-6 py-10 sm:px-6 lg:px-10 lg:py-12">
+            <div class="md:mb-4 lg:mb-12">
+                <div class="md:mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-14">
+                    <h6 class="text-orange-500 font-bold md:mb-1">CONTACT</h6>
+                    <h2 class="font-heading md:mb-4 font-bold tracking-tight text-gray-900 text-3xl sm:text-5xl">
                         Get in Touch
                     </h2>
                     <!-- <p class="mx-auto mt-4 max-w-3xl text-xl text-gray-600">Need Any Help Regarding to Workiee!
                     </p> -->
                 </div>
             </div>
-            <div class="flex items-stretch justify-center mt-4">
+            <div class="flex items-stretch justify-center mt-2 md:mt-4">
                 <div class="grid md:grid-cols-2">
-                    <div class="h-full pr-6">
-                        <p class="mt-3 mb-12 text-lg text-gray-600">
+                    <div class="h-full md:pr-6">
+                        <p class="text-center md:text-start md:mt-3 mb-12 text-lg text-gray-600">
                             Just send us a message our team will be ready to help you in
                             any case related to Workiee!
                         </p>
@@ -89,7 +89,7 @@ include ('includes/header.php');
                             </li>
                         </ul>
                     </div>
-                    <div class="border-2 border-gray-400 flex justify-center items-center">
+                    <div class="border-2 border-gray-400 flex justify-center items-center hidden md:block">
                         <div id="map"></div>
                         <!-- prettier-ignore -->
                         <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
@@ -100,13 +100,13 @@ include ('includes/header.php');
         </div>
     </section>
 
-    <section class="flex py-12">
-        <div class="flex-1">
+    <section class="flex lg:py-12 max-w-screen-2xl mx-auto xl:px-6">
+        <div class="flex-1 hidden md:block">
             <img alt="Student"
                 src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 class="h-56 w-full object-cover sm:h-full" />
         </div>
-        <div class="flex-1 card h-fit max-w-xl p-5 md:px-16 md:py-20 w-full text-center" id="form">
+        <div class="flex-1 card h-fit max-w-xl p-5 md:px-8 lg:px-16 md:py-12 w-full text-center" id="form">
             <h2 class="mb-8 text-2xl font-bold">Ready to Get Started?</h2>
             <form id="contactForm" action="submit_contact.php" method="post">
                 <div class="mb-8">

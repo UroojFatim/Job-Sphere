@@ -55,7 +55,7 @@ if (!isset ($profile)) {
   ?>
 
   <main class="main bg-white px-6 md:px-16 py-6">
-    <div class="w-full max-w-xl mx-auto">
+    <div class="w-full md:max-w-md xl:max-w-xl mx-auto">
       <form method="post">
         <h1 class="text-2xl mb-2 font-bold text-center">Create Profile</h1>
         <p class="text-gray-600 font-semibold text-center py-2">
@@ -95,7 +95,7 @@ if (!isset ($profile)) {
               cols="" rows="10"></textarea>
           </div>
           <div>
-            <button class="bg-orange-500 hover:bg-orange-600 text-black py-2 px-3 rounded" type="submit">Create
+            <button class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-3 rounded" type="submit">Create
               Profile</button>
           </div>
       </form>
@@ -105,11 +105,11 @@ if (!isset ($profile)) {
   <?php
 } else {
   ?>
-  <h1 class="text-4xl text-center mt-6 py-4 text-gray-800 font-semibold">Hi
+  <h1 class="text-4xl text-center mt-6 py-4 text-gray-800 font-semibold px-6">Hi
     <?php echo $profile['full_name'] ?>, Welcome Back!
   </h1>
 
-  <main class="flex mx-10 p-10 rounded-md">
+  <main class="flex md:px-6 flex-col gap-y-8 xl:flex-row rounded-md max-w-screen-2xl mx-auto">
     <div class="flex-1 px-6">
       <h3 class="text-3xl font-semibold py-6 text-black">Profile Details</h3>
       <ul class="text-lg text-black">
@@ -118,8 +118,8 @@ if (!isset ($profile)) {
             <?php echo $profile['full_name'] ?>
           </span>
         </li>
-        <li class="font-medium mt-2">Resume Link:
-          <span class="font-normal">
+        <li class="font-medium mt-2 break-words">Resume Link:
+          <span class="font-normal    ">
             <?php echo $profile['resume_path'] ?>
           </span>
         </li>
@@ -140,14 +140,14 @@ if (!isset ($profile)) {
         </li>
       </ul>
     </div>
-    <div class="flex-1">
+    <div class="flex-1 hidden md:block px-6 xl:py-6">
       <img alt="Party"
         src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         class="" />
     </div>
   </main>
 
-  <h2 class="text-2xl text-center py-5 mt-6 text-gray-800 font-semibold uppercase">Job Applications
+  <h2 class="text-2xl text-center py-5 mt-6 text-gray-800 font-semibold uppercase max-w-screen-2xl mx-auto">Job Applications
   </h2>
 
   <?php
@@ -179,7 +179,7 @@ WHERE
     die ("Error: " . $conn->error);
   }
   if ($result->num_rows > 0) {
-    echo '<div class="relative mx-16 mb-16 overflow-x-auto shadow-md sm:rounded-lg">
+    echo '<div class="relative md:px-12 px-6 mb-6 md:mb-16 overflow-x-auto shadow-md sm:rounded-lg mx-auto max-w-screen-2xl">
     <table class="w-full text-sm text-left text-gray-500">
         <thead class="text-xs text-white uppercase bg-orange-500">
             <tr>
@@ -227,7 +227,7 @@ WHERE
 </table>
 </div>';
   } else {
-    echo 'No job applications found.';
+    echo '<p class="text-center pb-12 text-2xl text-gray-600 font-semibold">No job applications found.</p>';
   }
 }
 ?>

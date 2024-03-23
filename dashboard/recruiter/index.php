@@ -54,7 +54,7 @@ if (!isset ($profile)) {
     // Display the company profile form
     ?>
     <main class="main bg-white px-6 md:px-16 py-6">
-        <div class="w-full max-w-xl mx-auto">
+        <div class="w-full md:max-w-md xl:max-w-xl mx-auto">
             <form method="post">
                 <h1 class="text-2xl mb-2 font-bold text-center">Company Profile</h1>
                 <p class="text-gray-600 font-semibold text-center py-2">
@@ -89,7 +89,7 @@ if (!isset ($profile)) {
                     </div>
 
                     <div>
-                        <button class="bg-orange-500 hover:bg-orange-600 text-black py-2 px-3 rounded" type="submit">Create
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-3 rounded" type="submit">Create
                             Profile</button>
                     </div>
             </form>
@@ -97,10 +97,11 @@ if (!isset ($profile)) {
     </main>
     <?php
 } else { ?>
-    <h1 class="text-4xl text-center mt-4 py-5 text-gray-800 font-semibold">Hi
+    <h1 class="text-4xl text-center mt-4 px-7 py-5 text-gray-800 font-semibold">Hi
         <?php echo $profile['name'] ?>, Welcome Back!
     </h1>
-    <main class="flex mx-10 py-6 rounded-md ">
+
+    <main class="flex md:px-6 flex-col gap-y-8 xl:flex-row rounded-md max-w-screen-2xl mx-auto">
         <div class="flex-1 px-6">
             <h3 class="text-3xl font-semibold py-6 text-black">Profile Details</h3>
             <ul class="text-lg text-black">
@@ -128,14 +129,15 @@ if (!isset ($profile)) {
             </ul>
         </div>
 
-        <div class="flex-1">
+        <div class="flex-1 hidden md:block px-6 xl:py-6">
             <img alt="Party"
                 src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 class="" />
         </div>
     </main>
-    <section class="flex mx-10 py-20 gap-4 ">
-        <div class="flex-1 bg-orange-100 rounded-md p-8">
+
+    <section class="flex flex-col lg:flex-row py-6 lg:py-20 gap-4 max-w-screen-2xl mx-auto">
+        <div class="flex-1 bg-orange-100 rounded-md p-7 md:p-12">
             <h3 class="text-3xl mb-4 font-semibold text-black">Jobs By You!</h3>
             <p class="mb-6 text-lg">
                 To maintain high-quality job listings and ensure each position gets the attention it deserves, our platform
@@ -155,7 +157,7 @@ if (!isset ($profile)) {
                 // Check if there are rows in the result set
                 if ($jobs->num_rows > 0) {
                     while ($row = $jobs->fetch_assoc()) {
-                        echo '<div class=" p-6 rounded-md mx-2">
+                        echo '<div class="p-5 md:p-10 rounded-md lg:mx-2">
                                         <h3 class="text-black text-2xl px-2 mb-2 font-semibold">' . $row["title"] . '</h3>
                                         <p class="text-black text-lg px-2 mb-2">Description: ' . $row["description"] . '</p>
                                         <p class="text-black text-lg px-2 mb-2">Date: ' . $row["created_at"] . '</p>
@@ -168,7 +170,8 @@ if (!isset ($profile)) {
                 </div>';
                     }
                 } else {
-                    echo '<p class="text-center text-black">No jobs found.</p>';
+                    echo '<div class="w-full text-center"><p class="text-black text-2xl pt-4">NO JOBS FOUND</p>
+                    <div class="py-4">Click on a left job post button to create a new job</div></div>';
                 }
                 ; ?>
             </div>
@@ -176,7 +179,7 @@ if (!isset ($profile)) {
     </section>
 
 
-    <h2 class="text-2xl text-center py-6 text-gray-800 font-semibold uppercase">Job Applications
+    <h2 class="text-2xl text-center py-6 text-gray-800 font-semibold uppercase max-w-screen-2xl mx-auto">Job Applications
     </h2>
 
     <?php
@@ -205,7 +208,7 @@ WHERE
         die ("Error: " . $conn->error);
     }
     if ($result->num_rows > 0) {
-        echo '<div class="relative mx-16 mb-16 overflow-x-auto shadow-md sm:rounded-lg">
+        echo '<div class="relative md:px-12 px-6 mb-6 md:mb-16 overflow-x-auto shadow-md sm:rounded-lg mx-auto max-w-screen-2xl">
     <table class="w-full text-sm text-left text-gray-500">
         <thead class="text-xs text-white uppercase bg-orange-500">
             <tr>
@@ -259,7 +262,7 @@ WHERE
 </table>
 </div>';
     } else {
-        echo '<p class="text-center py-4 text-2xl text-gray-600 font-semibold">No job applications found.</p>';
+        echo '<p class="text-center pb-12 text-2xl text-gray-600 font-semibold">No job applications found.</p>';
     }
 }
 ?>
