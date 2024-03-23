@@ -45,11 +45,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
             <!-- Mobile -->
 
-            <div class="flex items-center justify-between w-full">
-                <a href="/workiee_jobportal" class="flex items-center hidden md:block lg:hidden">
+            <div class="flex items-center justify-between w-full block lg:hidden">
+                <a href="/workiee_jobportal" class="flex items-center hidden md:block ">
                     <img src="https://i.ibb.co/qrsRr2v/workiee-logo.png" class="h-6 mr-3 sm:h-12" alt="Workiee Logo">
                 </a>
-                <div class="lg:hidden block">
+                <div>
                     <?php
                     if (isset ($_SESSION['user_id'])) {
                         // User is logged in, show the logout button
@@ -64,7 +64,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </div>
                 <div>
                     <button data-collapse-toggle="mobile-menu-2" type="button"
-                        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                         aria-controls="mobile-menu-2" aria-expanded="true">
                         <span class="sr-only">Open main menu</span>
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -81,19 +81,43 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </button>
                 </div>
             </div>
-
+            <div id="mobile-menu-2" class="hidden w-full">
+                <ul class="flex flex-col mt-4 font-medium ">
+                    <li>
+                        <a href="/workiee_jobportal/"
+                            class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:text-orange-500 lg:bg-transparent lg:text-orange-600 lg:p-0 dark:text-white border-b border-gray-300"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="/workiee_jobportal/companies"
+                            class="<?php echo ($current_page == 'companies.php') ? 'dark:text-black dark:border-white' : 'dark:text-gray-300 ' ?>w-full block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-300 lg:hover:bg-transparent lg:border-0 hover:text-orange-500 lg:hover:text-orange-600 lg:p-0 lg:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black lg:dark:hover:bg-transparent dark:border-gray-700">Companies</a>
+                    </li>
+                    <li>
+                        <a href="/workiee_jobportal/jobs"
+                            class="<?php echo ($current_page == 'jobs.php') ? 'dark:text-black dark:border-white' : 'dark:text-gray-300 ' ?>w-full block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-300 hover:text-orange-500 lg:hover:bg-transparent lg:border-0 lg:hover:text-orange-600 lg:p-0  lg:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black lg:dark:hover:bg-transparent dark:border-gray-700">Jobs</a>
+                    </li>
+                    <li>
+                        <a href="/workiee_jobportal/about"
+                            class="<?php echo ($current_page == 'about.php') ? 'dark:text-black dark:border-white' : 'dark:text-gray-300 ' ?>w-full block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-300  hover:text-orange-500 lg:hover:bg-transparent lg:border-0 lg:hover:text-orange-600 lg:p-0  lg:dark:h over:text-black dark:hover:bg-gray-700 dark:hover:text-black lg:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                    </li>
+                    <li>
+                        <a href="/workiee_jobportal/contact"
+                            class="<?php echo ($current_page == 'contact.php') ? 'dark:text-black ' : 'dark:text-gray-300 ' ?>w-full block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-300  hover:text-orange-500 lg:hover:bg-transparent lg:border-0 lg:hover:text-orange-600 lg:p-0 lg:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                    </li>
+                </ul>
+            </div>
             <!-- laptop -->
 
-            <div class="items-center justify-between w-full lg:flex  lg:order-1" id="mobile-menu-2">
-                <a href="/workiee_jobportal" class="flex items-center hidden lg:block">
+            <div class="items-center justify-between w-full lg:flex lg:order-1 hidden lg:block">
+                <a href="/workiee_jobportal" class="flex items-center">
                     <img src="https://i.ibb.co/qrsRr2v/workiee-logo.png" class="h-6 mr-3 sm:h-12" alt="Workiee Logo">
                     <!-- <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-black">Workiee</span> -->
                 </a>
 
-                <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                <ul class="flex font-medium flex-row space-x-8 ">
                     <li>
                         <a href="/workiee_jobportal/"
-                            class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:text-orange-500 lg:bg-transparent lg:text-orange-600 lg:p-0 dark:text-white border-b border-gray-300"
+                            class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:text-orange-500 lg:bg-transparent lg:text-orange-600 lg:p-0 dark:text-white"
                             aria-current="page">Home</a>
                     </li>
                     <li>
@@ -113,7 +137,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                             class="<?php echo ($current_page == 'contact.php') ? 'dark:text-black ' : 'dark:text-gray-300 ' ?>block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-300  hover:text-orange-500 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-orange-600 lg:p-0 lg:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
                     </li>
                 </ul>
-                <div class="hidden lg:block">
+                <div>
                     <?php
                     if (isset ($_SESSION['user_id'])) {
                         // User is logged in, show the logout button
