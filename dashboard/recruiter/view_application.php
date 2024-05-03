@@ -1,7 +1,7 @@
 <?php
 // Assuming you have established a database connection
 include('../../config.php');
-$pageTitle = 'View Application - Workiee';
+$pageTitle = 'View Application - Job_Sphere';
 include('../../includes/header.php');
 // Get the job application ID from the URL
 $job_application_id = $_GET['application_id'];
@@ -36,9 +36,9 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
 
     // Display the job application details
-    echo '<div class="bg-white mx-6 max-w-md xl:max-w-xl md:mx-auto my-10 overflow-hidden shadow rounded-lg border">
-    <div class="px-4 py-6 sm:px-6">
-        <h3 class="text-xl leading-6 font-medium text-gray-900">
+    echo '<div class="bg-white mx-6 max-w-md xl:max-w-xl md:mx-auto my-10 overflow-hidden shadow-xl rounded-lg border">
+    <div class="px-4 py-6 sm:px-6 flex flex-col items-center">
+        <h3 class="text-xl leading-6 font-bold text-amber-900 ">
             Job Application Details
         </h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500">
@@ -48,74 +48,74 @@ if ($result->num_rows > 0) {
     <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
         <dl class="sm:divide-y sm:divide-gray-200">
             <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
+                <dt class="text-sm font-medium text-sky-600">
                     Full name
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <dd class="mt-1 text-sm text-amber-800 sm:mt-0 sm:col-span-2">
                 ' . $row['job_seeker_name'] . '
                 </dd>
             </div>
             <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
+                <dt class="text-sm font-medium text-sky-600">
                     Resume Path
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <dd class="mt-1 text-sm text-amber-800 sm:mt-0 sm:col-span-2">
                     <a href=' . $row['job_seeker_resume'] . '>' . $row['job_seeker_resume'] . '</a>
                 </dd>
             </div>
             <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
+                <dt class="text-sm font-medium text-sky-600">
                     Skills 
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <dd class="mt-1 text-sm text-amber-800 sm:mt-0 sm:col-span-2">
                 ' . $row['job_seeker_skills'] . '
                 </dd>
             </div>
             <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
+                <dt class="text-sm font-medium text-sky-600">
                     Education 
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <dd class="mt-1 text-sm text-amber-800 sm:mt-0 sm:col-span-2">
                 ' . $row['job_seeker_education'] . '
                 </dd>
             </div>
             <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
+                <dt class="text-sm font-medium text-sky-600">
                     Experience
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <dd class="mt-1 text-sm text-amber-800 sm:mt-0 sm:col-span-2">
                 ' . $row['job_seeker_experience'] . '
                 </dd>
             </div>
             <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
+                <dt class="text-sm font-medium text-sky-600">
                     Cover Letter
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <dd class="mt-1 text-sm text-amber-800 sm:mt-0 sm:col-span-2">
                 ' . $row['cover_letter'] . '
                 </dd>
             </div>
             <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
+                <dt class="text-sm font-medium text-sky-600">
                     Applied on
                 </dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <dd class="mt-1 text-sm text-amber-800 sm:mt-0 sm:col-span-2">
                 ' . substr($row['applied_at'], 0, 10) . '
                 </dd>
             </div>
             <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
+                <dt class="text-sm font-medium text-sky-600">
                     Status
                 </dt>
-                <dd class="mt-1 capitalize text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                <dd class="mt-1 capitalize text-sm text-amber-800 sm:mt-0 sm:col-span-2">
                 ' . $row['status'] . '
                 </dd>
             </div>
         </dl>
     </div>
-    <div class="flex justify-center items-center mb-6">
-        <a href="/workiee_jobportal/dashboard/recruiter/application/approve?application_id=' . $row['application_id'] . '" class="bg-green-700 text-center py-2 px-5 rounded-md text-white m-2 hover:bg-green-800">Approve</a>
-        <a href="/workiee_jobportal/dashboard/recruiter/application/reject?application_id=' . $row['application_id'] . '" class="bg-red-700 text-center py-2 px-5 rounded-md text-white m-2 hover:bg-red-800">Reject</a>
+    <div class="flex justify-evenly items-center mb-6">
+        <a href="/Job_Portal/dashboard/recruiter/application/approve?application_id=' . $row['application_id'] . '" class="bg-sky-600 text-center py-2 px-5 rounded-md text-white m-2 hover:bg-sky-800 w-full">Approve</a>
+        <a href="/Job_Portal/dashboard/recruiter/application/reject?application_id=' . $row['application_id'] . '" class="bg-red-700 text-center py-2 px-5 rounded-md text-white m-2 hover:bg-red-800 w-full">Reject</a>
     </div>
 </div>';
 } else {

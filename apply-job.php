@@ -19,19 +19,19 @@ include('includes/header.php');
 if ($userType === 'recruiter') {
     ?>
     <div class="relative ml-96 my-20 -mr-5 p-4 w-full max-w-md max-h-full">
-        <div class="relative rounded-lg shadow bg-orange-950">
+        <div class="relative rounded-lg shadow bg-sky-100">
 
             <div class="p-4 md:p-5 text-center">
-                <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true"
+                <svg class="mx-auto mb-4 text-red-600 w-12 h-12 dark:text-red-800" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
                 <h3 href="/" class="mb-5 text-lg font-normal text-black">Recruiters Can't Apply
                     For Job!</h3>
-                <a href="">
+                <a href="job-detail.php">
                     <button data-modal-hide="popup-modal" type="button"
-                        class="text-black bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center me-2">
+                        class="text-white bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center me-2">
                         Go Back
                     </button></a>
             </div>
@@ -96,9 +96,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <main class="main bg-white px-6 md:px-16 py-6">
-    <div class="w-full max-w-xl mx-auto">
+    <div class="w-full max-w-xl mx-auto p-12 bg-sky-50 rounded-2xl shadow-lg">
         <form method="post">
-            <h1 class="text-2xl mb-2 font-bold text-center">Apply For
+            <h1 class="text-2xl mb-2 font-extrabold text-center text-amber-900">Apply For
                 <?php echo $job['title'] ?>
             </h1>
             <p class="text-gray-600 font-semibold text-center py-2">
@@ -108,12 +108,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </p>
             <div>
                 <label for="description" class="block text-gray-700 text-sm mb-2">Cover Letter</label>
-                <textarea name="cover_letter" id="cover_letter"
+                <textarea name="cover_letter" id="cover_letter" placeholder="Write here..."
                     class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
                     cols="" rows="10"></textarea>
             </div>
-            <div>
-                <button class="bg-orange-500 hover:bg-orange-600 text-black py-2 px-3 rounded" type="submit">Apply
+            <div class = "flex justify-center items-center">
+                <button class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-3 rounded" type="submit">Apply
                     Now</button>
             </div>
         </form>

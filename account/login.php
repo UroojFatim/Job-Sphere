@@ -24,17 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['account_type'] = $row['account_type'];
 
             // Redirect the user to the dashboard or another page after successful login
-            if($_SESSION['account_type'] === 'jobseeker'){
+            if ($_SESSION['account_type'] === 'jobseeker') {
                 $message = 'Logged in Successfully! Redirecting...';
-                header("Refresh: $delay; URL=/workiee_jobportal/dashboard/jobseeker");
-            }
-            else if($_SESSION['account_type'] === 'recruiter'){
+                header("Refresh: $delay; URL=/Job_Portal/dashboard/jobseeker");
+            } else if ($_SESSION['account_type'] === 'recruiter') {
                 $message = 'Logged in Successfully! Redirecting...';
-                header("Refresh: $delay; URL=/workiee_jobportal/dashboard/recruiter");
-            }
-            else{
+                header("Refresh: $delay; URL=/Job_Portal/dashboard/recruiter");
+            } else {
                 header('Location: /');
-                
             }
         } else {
             $message = 'Invalid Password';
@@ -44,72 +41,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$pageTitle = 'Login - Workiee';
+$pageTitle = 'Login - Job_Sphere';
 include '../includes/header.php';
 
 ?>
-<section class="relative flex flex-wrap lg:h-screen lg:items-center max-w-screen-2xl mx-auto">
-    <div class="w-full px-6 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-12">
+<section class="relative flex flex-wrap items-center justify-center lg:h-screen lg:items-center max-w-screen-2xl mx-auto" style="background-image: url(https://media.istockphoto.com/id/1292991881/photo/the-more-you-know-the-more-your-business-grows.jpg?s=1024x1024&w=is&k=20&c=JrmTG1vixmUZqUTBeZucxTo7mJ_iNP7PSdKUkOH6vWI=); background-color: rgba(0, 0, 0, 0.6); background-blend-mode: multiply; background-repeat: no-repeat; background-size: cover;">
+    <div class="w-full  lg:w-1/2 lg:px-2 lg:py-12 bg-sky-50 rounded-2xl shadow-md ">
         <div class="mx-auto max-w-lg text-center">
-            <h1 class="text-2xl font-bold sm:text-3xl">Welcome Back!</h1>
-            <p class="text-gray-800 text-center py-4"><?php echo $message; ?></p>
+            <h1 class="text-3xl font-bold sm:text-4xl mb-4">Welcome Back!</h1>
+            <p class="text-gray-800 text-center py-2"><?php echo $message; ?></p>
             <p class="mt-4 text-gray-500">
                 Login Now and Start Visiting your dashboard!
             </p>
         </div>
 
         <form method="post" class="mx-auto mb-0 mt-8 max-w-md space-y-4">
-            <div>
+            <div class="shadow-md rounded-2xl">
                 <label for="email" class="sr-only">Email</label>
-
-                <div class="relative">
-                    <input type="email" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" name="email" placeholder="Enter email" />
-
-                    <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
-                        </svg>
-                    </span>
-                </div>
+                <input type="email" class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm" name="email" placeholder="Enter Email" required />
             </div>
 
-            <div>
+            <div class="shadow-md rounded-2xl">
                 <label for="password" class="sr-only">Password</label>
-
-                <div class="relative">
-                    <input type="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" name="password" placeholder="Enter password" />
-
-                    <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                        </svg>
-                    </span>
-                </div>
+                <input type="password" class="w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm" name="password" placeholder="Enter Password" required />
             </div>
 
             <div class="flex items-center justify-between">
-                <p class="text-sm text-gray-500">
-                    New Here? 
-                    <a class="underline" href="/workiee_jobportal/account/register">Sign up</a>
-                </p>
+                <div class="flex items-center">
+                    <input type="checkbox" id="remember" class="text-sky-500 border-gray-300 rounded focus:ring-sky-500" />
+                    <label for="remember" class="ml-2 text-sm text-gray-600">Remember Me</label>
+                </div>
 
-                <button type="submit"
-                    class="inline-block rounded-lg bg-orange-500 px-8 py-3 text-sm font-medium text-white">
-                    Login
-                </button>
+                <a href="/Job_Portal/account/forgot-password" class="text-sm text-sky-500 hover:underline">Forgot Password?</a>
             </div>
-        </form>
-    </div>
 
-    <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
-        <img alt="Welcome"
-            src="https://images.unsplash.com/photo-1630450202872-e0829c9d6172?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            class="absolute inset-0 h-full w-full object-cover" />
+            <button type="submit" class="w-full rounded-lg bg-sky-500 px-6 py-3 text-sm font-medium text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">Login</button>
+        </form>
+
+        <p class="mt-4 text-sm text-gray-600 text-center">
+            New Here? <a href="/Job_Portal/account/register" class="text-sky-500 hover:underline">Sign Up</a>
+        </p>
     </div>
 </section>

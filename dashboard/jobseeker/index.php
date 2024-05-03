@@ -5,12 +5,11 @@ include '../../config.php';
 session_start();
 $message = '';
 
-if (!isset ($_SESSION['user_id'])) {
+if (!isset($_SESSION['user_id'])) {
   header("Location: /account/login.php");
   exit();
-
 } else if (($_SESSION['account_type'] !== 'jobseeker')) {
-  header('Location: /workiee_jobportal');
+  header('Location: /Job_Portal');
   exit();
 }
 // Get the current user's ID from the session
@@ -46,111 +45,102 @@ if ($result->num_rows > 0) {
   }
 }
 $pageTitle = 'Jobseeker - Dashboard';
-include ('../../includes/header.php')
-  ?>
+include('../../includes/header.php')
+?>
 
 
 <?php
-if (!isset ($profile)) {
-  ?>
 
-  <main class="main bg-white px-6 md:px-16 py-6">
+if (!isset($profile)) {
+?>
+
+  <main class="main bg-sky-50 px-6 md:px-16 py-6">
     <div class="w-full md:max-w-md xl:max-w-xl mx-auto">
       <form method="post">
-        <h1 class="text-2xl mb-2 font-bold text-center">Create Profile</h1>
+        <h1 class="text-3xl mb-2 font-extrabold text-center bg-amber-950 bg-clip-text text-transparent">Create Profile</h1>
         <p class="text-gray-600 font-semibold text-center py-2">
           <?php echo $message ?>
         </p>
         <div class="job-info border-b-2 py-2 mb-5">
           <div class="mb-4">
-            <label class="block text-gray-700 text-sm mb-2" for="name">Full Name</label>
-            <input
-              class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
-              type="text" id="full_name" name="full_name" placeholder="Sarfaraz U" autofocus>
+            <label class="block text-gray-700 text-md mb-2" for="name">Full Name</label>
+            <input class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500 shadow-md" type="text" id="full_name" name="full_name" placeholder="Urooj Fatima" autofocus>
           </div>
           <div class="mb-4">
-            <label class="block text-gray-700 text-sm mb-2" for="resume">Resume Path</label>
-            <input
-              class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
-              type="url" id="resume_path" name="resume_path" placeholder="https://linkedin.com/in/..." autofocus>
+            <label class="block text-gray-700 text-md mb-2" for="resume">Resume Path</label>
+            <input class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500 shadow-md" type="url" id="resume_path" name="resume_path" placeholder="https://linkedin.com/in/..." autofocus>
           </div>
           <div class="mb-4">
-            <label class="block text-gray-700 text-sm mb-2" for="skills">Skills</label>
-            <input
-              class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
-              type="text" id="skills" name="skills" placeholder="JavaScript, PHP, MongoDB" autofocus>
+            <label class="block text-gray-700 text-md mb-2" for="skills">Skills</label>
+            <input class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500 shadow-md" type="text" id="skills" name="skills" placeholder="JavaScript, PHP, Next.js" autofocus>
           </div>
 
 
           <div>
-            <label for="education" class="block text-gray-700 text-sm mb-2">Education</label>
-            <textarea name="education" id="education"
-              class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
-              cols="" rows="10"></textarea>
+            <label for="education" class="block text-gray-700 text-md mb-2">Education</label>
+            <textarea name="education" id="education" class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500 shadow-md" cols="" rows="10"></textarea>
           </div>
           <div>
-            <label for="experience" class="block text-gray-700 text-sm mb-2">Experience</label>
-            <textarea name="experience" id="experience"
-              class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
-              cols="" rows="10"></textarea>
+            <label for="experience" class="block text-gray-700 text-md mb-2">Experience</label>
+            <textarea name="experience" id="experience" class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500 shadow-md" cols="" rows="10"></textarea>
           </div>
           <div>
-            <button class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-3 rounded" type="submit">Create
+            <button class="bg-amber-900 hover:bg-amber-950 text-white py-2 px-3 rounded font-semibold" s" type="submit">Create
               Profile</button>
           </div>
       </form>
     </div>
   </main>
 
-  <?php
+<?php
+
 } else {
-  ?>
-  <h1 class="text-4xl text-center mt-6 py-4 text-gray-800 font-semibold px-6">Hi
+
+?>
+
+  <h1 class="text-4xl text-center py-6 text-amber-950 font-semibold px-6 bg-sky-50">Hi
     <?php echo $profile['full_name'] ?>, Welcome Back!
   </h1>
 
-  <main class="flex md:px-6 flex-col gap-y-8 xl:flex-row rounded-md max-w-screen-2xl mx-auto">
-    <div class="flex-1 px-6">
-      <h3 class="text-3xl font-semibold py-6 text-black">Profile Details</h3>
-      <ul class="text-lg text-black">
-        <li class="font-medium">Full Name:
+  <main class="flex md:px-6flex-col gap-y-8 xl:flex-row rounded-md max-w-screen-2xl mx-auto bg-sky-50 pb-14">
+    <div class="flex-1 bg-white shadow-lg border border-gray-400 " style="margin-left:15%; margin-right:15%;">
+      <h3 class="text-3xl font-semibold text-white text-center bg-amber-900 p-7 flex items-center justify-center">Profile Details</h3>
+      
+      <ul class="text-lg text-black px-12 py-12">
+        <li class="font-medium flex justify-between">Full Name:
           <span class="font-normal">
             <?php echo $profile['full_name'] ?>
           </span>
         </li>
-        <li class="font-medium mt-2 break-words">Resume Link:
-          <span class="font-normal    ">
+        <li class="font-medium mt-2 break-words flex justify-between">Resume Link:
+          <span class="font-normal">
             <?php echo $profile['resume_path'] ?>
           </span>
         </li>
-        <li class="font-medium mt-2">Skills:
+        <li class="font-medium mt-2 flex justify-between">Skills:
           <span class="font-normal">
             <?php echo $profile['skills'] ?>
           </span>
         </li>
-        <li class="font-medium mt-2">Education:
+        <li class="font-medium mt-2 flex justify-between">Education:
           <span class="font-normal">
             <?php echo $profile['education'] ?>
           </span>
         </li>
-        <li class="font-medium mt-2">Experience:
+        <li class="font-medium mt-2 flex justify-between">Experience:
           <span class="font-normal">
             <?php echo $profile['experience'] ?>
           </span>
         </li>
       </ul>
     </div>
-    <div class="flex-1 hidden md:block px-6 xl:py-6">
-      <img alt="Party"
-        src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        class="" />
-    </div>
   </main>
+  <h2 class="text-2xl text-center py-5 mt-6 text-black font-semibold uppercase max-w-screen-2xl mx-auto">Job Applications
 
-  <h2 class="text-2xl text-center py-5 mt-6 text-gray-800 font-semibold uppercase max-w-screen-2xl mx-auto">Job Applications
   </h2>
 
-  <?php
+<?php
+
 
   $sql_applications = "
     SELECT 
@@ -176,12 +166,12 @@ WHERE
 
   $result = $conn->query($sql_applications);
   if (!$result) {
-    die ("Error: " . $conn->error);
+    die("Error: " . $conn->error);
   }
   if ($result->num_rows > 0) {
     echo '<div class="relative md:px-12 px-6 mb-6 md:mb-16 overflow-x-auto shadow-md sm:rounded-lg mx-auto max-w-screen-2xl">
     <table class="w-full text-sm text-left text-gray-500">
-        <thead class="text-xs text-white uppercase bg-orange-500">
+        <thead class="text-xs text-white uppercase bg-sky-500">
             <tr>
                 <th scope="col" class="px-6 py-3">
                     Job Title
@@ -230,4 +220,5 @@ WHERE
     echo '<p class="text-center pb-12 text-2xl text-gray-600 font-semibold">No job applications found.</p>';
   }
 }
+
 ?>

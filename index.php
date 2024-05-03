@@ -1,123 +1,80 @@
 <?php
 session_start();
-$pageTitle = 'Workiee - Your Job Home';
+$pageTitle = 'Job_Sphere - Your Job Home';
 include './includes/header.php';
 
 ?>
-<!-- bg-orange-100 -->
-<section class="bg-orange-50 text-black">
-  <div class=" mx-auto lg:max-w-screen-2xl space-y-6 lg:space-y-0 px-8 py-12 lg:py-18 lg:flex lg:h-2/3 lg:items-start">
-    <div class="flex-1 my-auto h-full">
-      <h1
-        class="bg-gradient-to-r from-blue-800 to-orange-500 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
-        Chart Your Journey with
-
-        <span class="sm:block"> with Workiee </span>
+<!-- Hero Section -->
+<section class="mb-8 text-[#451a03] bg-cover bg-center min-h-screen flex items-center justify-center" style="background-image: url('https://jobi-nextjs.vercel.app/_next/static/media/img_27.26aeb87c.jpg');">
+  <div class="mx-auto max-w-screen-2xl space-y-6 px-8 py-12 lg:py-18">
+    <div class="text-center">
+      <h1 class="text-4xl font-extrabold text-amber-900">
+        Explore Exciting Opportunities with
+        <span class="block text-amber-900">Jobi</span>
       </h1>
 
-      <p class=" mt-6 max-w-xl sm:text-xl/relaxed">
-        Explore exciting job prospects and find your path to success. Join us to connect with opportunities
-        tailored just for you.
+      <p class="mt-6 max-w-xl text-lg text-neutral-900" style="max-width: 50rem;">
+        Embark on a journey of growth and fulfillment. Jobi offers tailored career paths and connects you with opportunities that match your aspirations.
       </p>
 
-      <div class="mt-8 flex flex-wrap justify-start gap-4">
-        <a class="block  rounded border border-orange-600 bg-orange-600 px-6 lg:px-8 py-3 text-xs lg:text-sm font-medium text-white hover:bg-transparent hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-          href="account/register.php">
-          Register Now
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a class="block rounded border border-sky-500 bg-sky-500 px-6 lg:px-8 py-3 text-xs lg:text-sm font-medium text-white hover:bg-transparent hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto" href="account/register.php">
+          Get Started
         </a>
 
-        <a class="block  rounded border border-orange-600 px-4 lg:px-8 py-3 text-xs lg:text-sm font-medium text-black hover:bg-orange-600 hover:text-white focus:outline-none focus:ring active:bg-orange-500 sm:w-auto"
-          href="jobs">
-          Latest Jobs
+        <a class="block rounded border border-sky-500 bg-neutral-100 sm:bg-transparent px-4 lg:px-8 py-3 text-xs lg:text-sm font-medium text-black hover:bg-sky-500 hover:text-white focus:outline-none focus:ring active:bg-sky-600 sm:w-auto" href="jobs">
+          Browse Jobs
         </a>
-      </div>
-    </div>
-    <div class="flex-1 flex items-center justify-center">
-      <style>
-        .rotating-world img {
-          animation: rotateWorld 20s linear infinite;
-          display: block;
-          max-width: 100%;
-          height: auto;
-        }
-
-        @keyframes rotateWorld {
-          from {
-            transform: rotate(0deg);
-          }
-
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      </style>
-      <div class="rotating-world">
-        <img src="./img/earth.png" alt="World Map" class="w-72 h-72 sm:w-96 sm:h-96 xl:w-[500px] xl:h-[500px]" />
       </div>
     </div>
   </div>
 </section>
 
-<section class="md:my-8 lg:my-16">
-  <div class="mx-auto max-w-screen-2xl">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-      <div class=" p-8 md:p-12 ">
-        <div class="mx-auto max-w-xl text-center  lg:flex lg:flex-col lg:h-full lg:justify-center lg:items-center">
-          <h2 class="text-2xl font-bold text-black">
-            Begin Your Career Adventure: The Doorway to Endless Possibilities with Workiee
-          </h2>
 
-          <p class="hidden text-black/90 sm:mt-6 sm:block">
-            Set forth on an enriching path to career success through our extensive job portal. Dive into a vast sea of
-            unique opportunities, crafted to empower you in forging and enhancing your career trajectory with absolute
-            certainty. Your ideal job is out there – initiate your quest now!
-          </p>
-
-          <div class="mt-4 md:mt-10">
-            <a href="#"
-              class="inline-block rounded border border-white hover:border-orange-600 bg-orange-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-black focus:outline-none focus:ring focus:ring-yellow-400">
-              Embrack Now
-            </a>
-          </div>
-        </div>
+<div class="mt-10 bg-wrapper position-relative wow fadeInUp" style="visibility: visible;">
+  <div class="container mx-auto lg:max-w-screen-xl bg-gradient-to-r to-gradient-r from-sky-500 via-amber-900 to-amber-950 rounded-lg p-8 lg:p-12 flex flex-col lg:flex-row items-center">
+    <div class="lg:w-1/2 lg:order-last flex justify-center lg:justify-end">
+      <div class="img-meta me-xl-4 position-relative rounded-full overflow-hidden">
+        <img alt="Job Image" loading="lazy" width="380" height="250" decoding="async" data-nimg="1" class="lazy-img shapes screen_01" style="color:transparent; border-radius: 20px;" src="https://jobi-nextjs.vercel.app/_next/static/media/img_28.4c49b680.jpg" srcset="https://jobi-nextjs.vercel.app/_next/static/media/img_28.4c49b680.jpg 1x, https://jobi-nextjs.vercel.app/_next/static/media/img_28.4c49b680.jpg 2x" />
       </div>
+    </div>
+    <div class="lg:w-1/2 lg:order-first text-center lg:text-left">
+      <div class="text-wrapper wow fadeInRight" style="visibility: visible;">
+        <div class="title-one mb-6 lg:mb-8">
+          <h2 class="text-white text-2xl lg:text-3xl font-bold">Get the job of your dreams quickly.</h2>
+        </div>
+        <p class="text-white text-md lg:text-lg mb-6 lg:mb-8">Commonly used in the graphic and print publishing industries for previewing visual mockups. Limited social discrimination.</p>
+        <a class="border border-white rounded-full hover:bg-white hover:text-black py-3 px-20 inline-flex items-center text-white" href="jobs.php">
+          <span class="font-medium">Find your dream job.</span>
+          <span class="ml-2 underline">Explore all</span>
+          <span class="ml-auto"><i class="bi bi-chevron-right"></i></span>
+        </a>
 
-      <div class="hidden sm:block grid grid-cols-2 gap-4 md:grid-cols-1">
-        <img alt="Student"
-          src="https://images.unsplash.com/photo-1618355776464-8666794d2520?auto=format&fit=crop&w=654&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          class="h-40 w-full object-cover sm:h-56 lg:h-[500px] md:h-full" />
       </div>
     </div>
   </div>
-  <div class="overflow-hidden bg-gray-100 sm:grid sm:grid-cols-2 mx-auto max-w-screen-2xl">
+</div>
 
-    <img alt="Student"
-      src="https://plus.unsplash.com/premium_photo-1663051241451-709fa4de55bc?auto=format&fit=crop&w=1770&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      class="h-56 w-full object-cover sm:h-full" />
-
-    <div class="p-8 md:p-12 lg:px-16 lg:py-24">
-      <div class="mx-auto max-w-xl text-center">
-        <h2 class="text-2xl font-bold text-gray-900">
-          Boost Your Team's Potential: Secure Top-Notch Talent with Workiee!
-        </h2>
-
-        <p class="hidden text-gray-500 md:mt-4 md:block">
-          Advance your organization's achievements by tapping into premier talent via our all-encompassing job portal.
-          Gain entry to an extensive array of proficient individuals, enabling your enterprise to excel with an adept
-          crew. Your future standout employee awaits – refine your hiring approach with assurance and accuracy.
-        </p>
-
-        <div class="my-4 md:mt-8">
-          <a href="#"
-            class="inline-block border border-white bg-orange-600 hover:bg-transparent hover:text-black rounded px-12 py-3 text-sm hover:border-orange-600 font-medium text-white transition hover:bg-orange-600 focus:outline-none focus:ring focus:ring-yellow-400">
-            List a Position
-          </a>
-        </div>
-      </div>
+<section class="mt-10 py-16 bg-white text-black relative">
+  <hr class="absolute top-0 w-full border-t border-black">
+  <hr class="absolute bottom-0 w-full border-t border-black">
+  <div class="container mx-auto max-w-screen-xl px-4 flex flex-col md:flex-row items-center justify-between gap-8">
+    <div class="text-center md:text-left">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Most Complete Job Portal</h2>
+      <p class="text-lg mb-6">Signup and start finding your dream job or talented individuals.</p>
     </div>
+    <div class="flex flex-col md:flex-row gap-4">
+    <a class="block rounded border border-sky-500 bg-sky-500 px-6 lg:px-8 py-3 text-xs lg:text-sm font-medium text-white hover:bg-transparent hover:text-black focus:outline-none focus:ring active:text-opacity-75 sm:w-auto" href="jobs.php">
+          Looking for a Job?
+        </a>
 
+        <a class="block rounded border border-sky-500 bg-neutral-100 sm:bg-transparent px-4 lg:px-8 py-3 text-xs lg:text-sm font-medium text-black hover:bg-sky-500 hover:text-white focus:outline-none focus:ring active:bg-sky-600 sm:w-auto" href="dashboard/recruiter/postjob.php">
+         Post a Job
+        </a>
+    </div>
   </div>
 </section>
+
 <?php
 include './includes/footer.php';
 ?>

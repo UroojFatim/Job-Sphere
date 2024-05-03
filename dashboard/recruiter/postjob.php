@@ -5,7 +5,7 @@ include '../../config.php';
 $message = '';
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['account_type'] !== 'recruiter') {
-  header('Location: /workiee_jobportal/account/login.php');
+  header('Location: /Job_Portal/account/login.php');
   exit();
 }
 
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <?php $pageTitle = 'Post Job - Workiee'; include('../../includes/header.php') ?>
 
-<main class="main bg-white px-6 md:px-16 py-6">
+<main class="main bg-sky-50 px-6 md:px-16 py-6">
   <div class="w-full max-w-xl mx-auto">
     <form action="" method="post">
       <h1 class="text-2xl mb-2 font-bold text-center">Post new job</h1>
@@ -42,20 +42,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="job-info border-b-2 py-2 mb-5">
         <!--    Title      -->
         <div class="mb-4">
-          <label class="block text-gray-700 text-sm mb-2" for="job-title">Title</label>
+          <label class="block text-gray-700 text-md mb-2" for="job-title">Title</label>
           <input
-            class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
+            class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500 shadow-md"
             type="text" id="job-title" name="title" placeholder="Frontend Developer" autofocus>
         </div>
 
         <div class="md:flex md:justify-between">
           <div class="w-full md:w-3/12 mb-4 md:mb-0">
-            <label class="block text-gray-700 text-sm mb-2" for="job-type">
+            <label class="block text-gray-700 text-md mb-2" for="job-type">
               Job Type
             </label>
             <div class="relative">
               <select
-                class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-gray-500"
+                class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-gray-500 shadow-md"
                 id="job-type" name="jobType">
                 <option>Full-time</option>
                 <option>Part-time</option>
@@ -73,20 +73,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
           <!--     Location       -->
           <div class="w-full md:w-8/12 mb-4 md:mb-0">
-            <label for="location" class="block text-gray-700 text-sm mb-2">Location</label>
+            <label for="location" class="block text-gray-700 text-md mb-2">Location</label>
             <input type="text"
-              class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
+              class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500 shadow-md"
               id="location" name="location" placeholder="Schwerin">
           </div>
         </div>
         <div class="md:flex md:justify-between">
           <div class="w-full mb-4">
-            <label class="block text-gray-700 text-sm mb-2" for="job-type">
+            <label class="block text-gray-700 text-md mb-2" for="job-type">
               Job Category
             </label>
             <div class="relative">
               <select
-                class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-gray-500"
+                class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-gray-500 shadow-md"
                 id="job-category" name="job_category">
                 <option value="web-developer">Web Developer</option>
                 <option value="software-engineer">Software Engineer</option>
@@ -120,18 +120,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </div>
         </div>
         <div>
-          <label for="description" class="block text-gray-700 text-sm mb-2">Description</label>
+          <label for="description" class="block text-gray-700 text-md mb-2">Description</label>
           <textarea name="description" id="description"
-            class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500"
+            class="appearance-none block w-full bg-white text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500 shadow-md"
             cols="" rows="10"></textarea>
         </div>
-        <div>
-          <button class="border border-orange-500 hover:border-orange-500 bg-orange-500 hover:bg-transparent hover:text-black text-white py-3 px-5 rounded" type="submit">Create job</button>
+        <div class="flex justify-center w-full">
+          <button class="border border-amber-900 hover:border-amber-950 bg-amber-900 hover:bg-transparent hover:text-black text-white py-3 px-5 rounded-md w-full" type="submit">Create job</button>
         </div>
     </form>
   </div>
 </main>
-
-<footer>
-  <?php include '../../includes/footer.php'; ?>
-</footer>

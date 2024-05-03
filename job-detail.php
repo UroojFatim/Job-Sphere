@@ -1,75 +1,72 @@
 <?php
 include 'config.php';
-$popup = '';
+
 // Check if a job ID is provided in the URL
-if (isset ($_GET['job_id'])) {
-  $jobId = $_GET['job_id'];
+if (isset($_GET['job_id'])) {
+    $jobId = $_GET['job_id'];
 
-  // Retrieve job details from the 'jobs' table based on the job ID
-  $sql = "SELECT * FROM jobs WHERE id = $jobId";
-  $result = $conn->query($sql);
+    // Retrieve job details from the 'jobs' table based on the job ID
+    $sql = "SELECT * FROM jobs WHERE id = $jobId";
+    $result = $conn->query($sql);
 
-  if ($result->num_rows > 0) {
-    $job = $result->fetch_assoc();
-  } else {
-    // Redirect to the jobs page if the job ID is not found
-    header("Location: jobs.php");
-    exit();
-  }
+    if ($result->num_rows > 0) {
+        $job = $result->fetch_assoc();
+    } else {
+        // Redirect to the jobs page if the job ID is not found
+        header("Location: jobs.php");
+        exit();
+    }
 } else {
-  // Redirect to the jobs page if no job ID is provided
-  header("Location: jobs.php");
+    // Redirect to the jobs page if no job ID is provided
+    header("Location: jobs.php");
 }
-$pageTitle = $job['title'] . '- Workiee';
 
-include ('includes/header.php')
-  ?>
-<?php
+$pageTitle = $job['title'] . '- Job_Sphere';
+include ('includes/header.php');
+?>
 
-echo '
-    <section class="relative bg-[url(https://source.unsplash.com/700x300/?' . $job['job_category'] . ')] bg-cover bg-center bg-no-repeat">
-    <div class="absolute inset-0 bg-white/75 bg-transparent from-white/95 to-white/25"></div>
-  
-    <div class="relative mx-auto max-w-screen-xl px-6 py-48 md:px-10 lg:flex lg:items-center lg:px-8">
-      <div class="max-w-xl text-left rtl:sm:text-right">
-        <h1 class="text-3xl font-extrabold sm:text-5xl">
-          Apply Now For
-          <strong class="block font-extrabold text-orange-500"> ' . $job['title'] . ' </strong>
-        </h1>
-  
-        <p class="mt-4 max-w-lg capitalize sm:text-xl/relaxed">
-          Posted By ' . $job['company'] . '
-        </p>
-  
-        <div class="mt-8 flex flex-wrap gap-4 text-center">
-          <a
-            href="apply-job?job_id=' . $job['id'] . '"
-            class="block w-full rounded bg-orange-500 px-12 py-3 text-sm font-medium text-white hover:text-black shadow hover:bg-transparent hover:border-orange-500 border border-orange-500 focus:outline-none focus:ring active:bg-orange-500 sm:w-auto"
-          >
-            Apply Now
-          </a>
+<section class="relative bg-cover bg-center bg-no-repeat" style="background-image: url('https://source.unsplash.com/700x300/?<?php echo $job['job_category']; ?>');">
+    <div class="absolute inset-0 bg-gradient-to-b from-white/95 to-white/25"></div>
+
+    <div class="relative mx-auto max-w-screen-xl px-6 py-16 md:py-24 lg:flex lg:items-center lg:px-8">
+        <div class="max-w-xl mx-auto text-center lg:text-left">
+            <h1 class="text-3xl font-extrabold sm:text-5xl text-amber-900"><?php echo $job['title']; ?></h1>
+            <p class="mt-4 max-w-lg capitalize sm:text-xl/relaxed">Posted By <?php echo $job['company']; ?></p>
+            <div class="mt-8">
+                <a href="apply-job?job_id=<?php echo $job['id']; ?>" class="inline-block bg-sky-500 text-white px-8 py-3 text-sm font-semibold uppercase rounded-lg shadow-md hover:bg-white hover:text-sky-500 hover:shadow-lg transition-all">Apply Now</a>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-  
-  <div class="flex flex-col bg-orange-50 w-full mx-auto p-8 md:p-12 max-w-screen-2xl">
-    <h5 class="text-2xl text-black font-semibold mb-4 italic">Job Description</h5>
-    <div class="text-lg mb-4">' . $job['description'] . ' </div>
-    <h5 class="italic block mb-4 mt-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-orange-gray-900">
-      Job Details
-    </h5>
-    <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-      <ul class="text-lg space-y-2">
-        <li>Category: ' . $job['job_category'] . '  </li>
-        <li>Job type: ' . $job['jobType'] . '</li>
-        <li>Location: ' . $job['location'] . '</li>
-        <li>Date: ' . substr($job['created_at'], 0, 10) . '</li>
-      </ul>
-    </p>
-  <a href=apply-job?job_id=' . $job['id'] . '>
-  <button class="mt-4 align-middle font-sans font-semibold text-center uppercase transition-all text-sm py-3 px-6 rounded-lg hover:bg-white hover:text-orange-500 shadow-md shadow-gray-900/10 hover:shadow-lg bg-orange-500 text-white hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none" type="button">
-  Apply Now
-</button></a>
-  </div>
-  ';
+</section>
+
+<div class="bg-sky-50">
+    <div class="w-1/20.055a11 mx-auto p-8 md:p-12">
+    <div style = "padding-left:15%; padding-right:15%; ">
+        <h2 class="text-2xl md:text-3xl text-black font-semibold mb-6 italic text-center">Job Description</h2>
+        <div class="text-lg text-gray-800 mb-6"><?php echo $job['description']; ?></div>
+        
+        <h3 class="text-xl md:text-2xl text-black font-semibold mb-4 italic text-center">Job Details</h3>
+        <ul class="text-lg text-gray-800 font-light">
+            <li class="flex justify-between items-center py-2">
+                <span class="font-semibold">Category:</span>
+                <span><?php echo $job['job_category']; ?></span>
+            </li>
+            <li class="flex justify-between items-center py-2">
+                <span class="font-semibold">Job Type:</span>
+                <span><?php echo $job['jobType']; ?></span>
+            </li>
+            <li class="flex justify-between items-center py-2">
+                <span class="font-semibold">Location:</span>
+                <span><?php echo $job['location']; ?></span>
+            </li>
+            <li class="flex justify-between items-center py-2">
+                <span class="font-semibold">Date:</span>
+                <span><?php echo substr($job['created_at'], 0, 10); ?></span>
+            </li>
+        </ul>
+        <div class="text-center mt-8">
+            <a href="apply-job?job_id=<?php echo $job['id']; ?>" class="inline-block bg-sky-500 text-white px-8 py-3 text-sm font-semibold uppercase rounded-lg shadow-md hover:bg-white hover:text-sky-500 hover:shadow-lg transition-all">Apply Now</a>
+        </div></div>
+    </div>
+
+<?php include ('includes/footer.php'); ?>

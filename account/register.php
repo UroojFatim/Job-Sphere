@@ -22,15 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $insertSql = "INSERT INTO users (username, email, password, account_type) VALUES ('$username', '$email', '$password', '$accountType')";
 
         if ($conn->query($insertSql) === TRUE) {
-            $message = 'Registered Successfully! <a href="/workiee_jobportal/account/login">Login Now</a>';
+            $message = 'Registered Successfully! <a href="/Job_Portal/account/login">Login Now</a>';
         } else {
             echo "Error: " . $insertSql . "<br>" . $conn->error;
         }
     }
 }
 ?>
-<section class="relative flex flex-wrap lg:h-screen lg:items-center max-w-screen-2xl mx-auto">
-    <div class="w-full px-6 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
+<section class="relative flex flex-wrap justify-center lg:h-screen lg:items-center max-w-screen-2xl mx-auto"  style="background-image: url(https://media.istockphoto.com/id/1292991881/photo/the-more-you-know-the-more-your-business-grows.jpg?s=1024x1024&w=is&k=20&c=JrmTG1vixmUZqUTBeZucxTo7mJ_iNP7PSdKUkOH6vWI=); background-color: rgba(0, 0, 0, 0.6); background-blend-mode: multiply; background-repeat: no-repeat; background-size: cover;">
+    <div class="w-fulllg:w-1/2 lg:px-8 py-9 bg-sky-50 rounded-2xl">
         <div class="mx-auto max-w-lg text-center">
             <h1 class="text-2xl font-bold sm:text-3xl">Get started today!</h1>
             <p class="text-gray-800 text-center py-4"><?php echo $message; ?></p>
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <form action="#" method="post" class="mx-auto mb-0 mt-8 max-w-md space-y-4">
-            <div>
+            <div class="shadow-md rounded-2xl">
                 <label for="username" class="sr-only">Username</label>
 
                 <div class="relative">
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         name="username" placeholder="Username" />
                 </div>
             </div>
-            <div>
+            <div class="shadow-md rounded-2xl">
                 <label for="email" class="sr-only">Email</label>
 
                 <div class="relative">
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
 
-            <div>
+            <div class="shadow-md rounded-2xl">
                 <label for="password" class="sr-only">Password</label>
 
                 <div class="relative">
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </span>
                 </div>
             </div>
-            <div>
+            <div class="shadow-md rounded-2xl">
                 <label for="account_type" class="sr-only">Account Type</label>
 
                 <div class="relative">
@@ -96,20 +96,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="flex items-center justify-between">
                 <p class="text-sm text-gray-500">
                     Have Account?
-                    <a class="underline" href="/workiee_jobportal/account/login">Login</a>
+                    <a class="underline" href="/Job_Portal/account/login">Login</a>
                 </p>
 
                 <button type="submit"
-                    class="inline-block rounded-lg bg-orange-500 px-7 py-3 text-sm font-medium text-white">
+                    class="inline-block rounded-lg bg-sky-500 px-7 py-3 text-sm font-medium text-white">
                     Register
                 </button>
             </div>
         </form>
     </div>
 
-    <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
+    <!-- <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
         <img alt="Welcome"
             src="https://images.unsplash.com/photo-1583674767461-99d1a9850069?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="absolute inset-0 h-full w-full object-cover" />
-    </div>
+    </div> -->
 </section>
